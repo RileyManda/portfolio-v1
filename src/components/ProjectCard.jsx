@@ -58,8 +58,6 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
                         <small style={{ fontSize: '9px', fontWeight: 'bold', color: 'white' }}>Created: {created}</small>
                         <div className="vr" />
                         <small  style={{ fontSize: '9px', fontWeight: 'bold', color: 'white' }}>Updated: {updated}</small>
-
-
                     </Stack>
                 </Card.Footer>
 
