@@ -9,7 +9,7 @@ import Stack from 'react-bootstrap/Stack';
 
 const techColors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark'];
 
-const ProjectCard = ({ projectImage, title, description, demo, github, techarray, created, updated }) => {
+const ProjectCard = ({ image, title, description, demo, github, techarray, created, updated }) => {
     const [isAccordionOpen, setIsAccordionOpen] = useState(false);
     const handleDemoClick = () => {
         window.open(demo, '_blank');
@@ -18,8 +18,6 @@ const ProjectCard = ({ projectImage, title, description, demo, github, techarray
     const handleGithubClick = () => {
         window.open(github, '_blank');
     };
-
-
     const toggleAccordion = () => {
         setIsAccordionOpen(!isAccordionOpen);
     };
@@ -31,18 +29,15 @@ const ProjectCard = ({ projectImage, title, description, demo, github, techarray
                 <div className="screw top-right" />
                 <div className="screw bottom-left" />
                 <div className="screw bottom-right" />
-                <Card.Img variant="top" src={projectImage} style={{ height: '250px' }} />
+                <Card.Img variant="top" src={image} style={{ height: '250px' }} />
                 <Card.ImgOverlay style={{ height: '250px' }}>
                     <Badge bg="dark" style={{ opacity: '0.8' }}><Card.Title style={{ fontSize: '18px' }}>{title}</Card.Title></Badge>
                 </Card.ImgOverlay>
-
                 <Card.Body>
-
                     <Accordion style={{ width: '100%', fontSize: '14px' }}>
                         <Accordion.Item eventKey="0">
                             <Accordion.Header onClick={toggleAccordion}>About</Accordion.Header>
                             <Accordion.Body>
-
                                 <Card.Text>{description}</Card.Text>
                             </Accordion.Body>
                         </Accordion.Item>
@@ -73,7 +68,7 @@ const ProjectCard = ({ projectImage, title, description, demo, github, techarray
     );
 };
 ProjectCard.propTypes = {
-    projectImage: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     demo: PropTypes.string.isRequired,

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
-import AppLogo from '../assets/project-images/jetlogix.png';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -67,8 +66,8 @@ const Projects = ({ setSearchKeyword, searchKeyword }) => {
             {projectsWithTopics.map((project, index) => (
               <Col key={index} xs="auto">
                 <ProjectCard
+                  image={project.image}
                   created={formatDate(project.created_at)}
-                  projectImage={AppLogo}
                   title={project.name}
                   description={project.description || 'Project Description'}
                   demo={project.homepage}
