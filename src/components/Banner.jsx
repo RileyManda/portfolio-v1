@@ -44,6 +44,7 @@ const Banner = () => {
                   <Stack gap={3} direction="vertical" className='stack-layout'>
                     <h1>{project.title}</h1>
                     <p>{project.description}</p>
+                    <p>{project.whatimadoing}</p>
                     <Stack direction="horizontal" gap={3}>
                       <Badge pill bg="dark">Front-end</Badge>
                       {FrontendIcons.map((icon, index) => (
