@@ -25,7 +25,6 @@ const Projects = ({ setSearchKeyword, searchKeyword }) => {
     }, 1000);
   };
 
-
   useEffect(() => {
     fetchProjects();
   }, []);
