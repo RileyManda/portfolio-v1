@@ -1,31 +1,34 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import AppLogo from '../assets/app-logo.svg';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
-// import Loader from './Loader';
+import Loader from './Loader';
 import { format } from 'date-fns';
 import SearchField from './SearchField';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
-import ProjectData from '../api/projectData.json'
+import ProjectData from '../api/projectData.json';
 
 const Projects = ({ setSearchKeyword, searchKeyword }) => {
   // projects local state
+  const [isLoading, setIsLoading] = useState(false);
   const [projects] = useState(ProjectData);
-  // const [isLoading, setIsLoading] = useState(false);
 
-  // useMemo(() => {
-  //   dispatch(fetchProjects());
-  // }, [dispatch]);
+  const fetchProjects = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  };
 
-  // if (isLoading) {
-  //   return <div><Loader /></div>;
-  // }
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
   const projectsWithTopics = projects
     .filter(project =>
@@ -59,6 +62,7 @@ const Projects = ({ setSearchKeyword, searchKeyword }) => {
         </Navbar>
 
         <Stack gap={3}>
+          {isLoading && <Loader />} {/* Display loader only when isLoading is true */}
           <Row xs="auto" md="auto" className="justify-content-center">
             {projectsWithTopics.map((project, index) => (
               <Col key={index} xs="auto">
