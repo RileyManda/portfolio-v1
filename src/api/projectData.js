@@ -1,4 +1,7 @@
-[
+import jetlogixImage from '../assets/project-images/jetlogix.png'
+import PortfolioImage from '../assets/project-images/portfolio.png'
+import CoincraftImage from '../assets/project-images/coincraft-home.png'
+const projects = [
   {
     "name": "JetLogix",
     "description": "Contributed to the successful development of JetLogix's Private Jet Reservation Application, by implementing the Add Aeroplane, Aeroplane Specs, and Reserve aeroplane components utilizing  React for the front-end and Ruby on Rails for the backend with implementations of TDD and BDD tests with Rspec and react testing library.The application API is built with Ruby on Rails and utilizes PostgreSQL database",
@@ -16,7 +19,7 @@
       "react-styled-component",
       "Redux-toolkit"
     ],
-    "image": "src/assets/project-images/jetlogix.png",
+    "image": jetlogixImage,
     "created_at": "2023-01-01T12:00:00Z",
     "updated_at": "2023-01-05T15:30:00Z"
   },
@@ -26,7 +29,7 @@
     "homepage": "https://rileysportfolio.onrender.com/",
     "html_url": "https://github.com/RileyManda/rileysportfolio",
     "topics": ["react","vite3","react-router","react-bootstrap","reactjs-components","githubapi","react-jest","prop-types","react-testing-library"],
-    "image": "src/assets/project-images/portfolio.png",
+    "image": PortfolioImage,
     "created_at": "2023-01-01T12:00:00Z",
     "updated_at": "2023-01-05T15:30:00Z"
   },
@@ -45,8 +48,9 @@
       "capybara",
       "cancancan"
     ],
-    "image": "src/assets/project-images/coincraft-home.png",
+    "image": CoincraftImage,
     "created_at": "2023-02-01T10:30:00Z",
     "updated_at": "2023-02-10T18:45:00Z"
   }
-]
+];
+export default projects;

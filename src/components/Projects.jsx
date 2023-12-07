@@ -11,7 +11,7 @@ import SearchField from './SearchField';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
-import ProjectData from '../api/projectData.json';
+import ProjectData from '../api/projectData';
 
 const Projects = ({ setSearchKeyword, searchKeyword }) => {
   // projects local state
