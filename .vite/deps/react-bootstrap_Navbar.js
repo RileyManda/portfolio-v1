@@ -1,47 +1,72 @@
+"use client";
+import {
+  Collapse_default
+} from "./chunk-LKZQSHPT.js";
+import {
+  useWillUnmount
+} from "./chunk-QYNCTRB2.js";
+import {
+  ENTERED,
+  ENTERING,
+  EXITING,
+  TransitionWrapper_default,
+  css_default,
+  transitionEndListener,
+  triggerBrowserReflow
+} from "./chunk-XUHFZC7A.js";
+import {
+  divWithClassName_default
+} from "./chunk-DCNA7BJD.js";
+import {
+  contains,
+  useWindow
+} from "./chunk-3RYVJ4BI.js";
 import {
   canUseDOM_default,
-  contains,
   listen_default,
-  ownerDocument,
-  useWindow
-} from "./chunk-MVRJAZH5.js";
-import {
-  require_react_dom
-} from "./chunk-MDIHFEFG.js";
-import {
-  require_prop_types
-} from "./chunk-QBOERDGK.js";
+  ownerDocument
+} from "./chunk-JF6VG5U5.js";
 import {
   NavbarContext_default,
   SelectableContext_default,
-  _inheritsLoose,
-  _objectWithoutPropertiesLoose,
   dataAttr,
-  qsa,
+  qsa
+} from "./chunk-RKDBJ4KQ.js";
+import {
   useEventCallback,
   useIsomorphicEffect_default,
-  useMergedRefs_default,
   useMounted,
-  usePrevious,
-  useUncontrolled
-} from "./chunk-GLQYW5T6.js";
+  usePrevious
+} from "./chunk-XJGEB5JV.js";
 import {
-  createWithBsPrefix
-} from "./chunk-26J5V33X.js";
+  useMergedRefs_default,
+  useUncontrolled
+} from "./chunk-2KBU7WA5.js";
+import {
+  require_prop_types
+} from "./chunk-MR7JJJBB.js";
+import "./chunk-KM5JISHU.js";
+import "./chunk-T4MTQRGO.js";
+import "./chunk-HOFZDJTO.js";
+import {
+  require_react_dom
+} from "./chunk-MKG3NT3Y.js";
 import {
   require_classnames,
   require_jsx_runtime,
   useBootstrapPrefix
-} from "./chunk-WTMQV53C.js";
+} from "./chunk-6RDS3TTM.js";
 import {
-  __toESM,
   require_react
-} from "./chunk-L7APZED3.js";
+} from "./chunk-67XTWVEJ.js";
+import {
+  __toESM
+} from "./chunk-5WWUZCGV.js";
 
 // node_modules/react-bootstrap/esm/Navbar.js
-var import_classnames10 = __toESM(require_classnames());
-var React19 = __toESM(require_react());
-var import_react19 = __toESM(require_react());
+var import_classnames11 = __toESM(require_classnames());
+var React17 = __toESM(require_react());
+var import_react13 = __toESM(require_react());
 
 // node_modules/react-bootstrap/esm/NavbarBrand.js
 var import_classnames = __toESM(require_classnames());
@@ -65,766 +90,20 @@ NavbarBrand.displayName = "NavbarBrand";
 var NavbarBrand_default = NavbarBrand;
 
 // node_modules/react-bootstrap/esm/NavbarCollapse.js
-var React6 = __toESM(require_react());
-var import_react5 = __toESM(require_react());
-
-// node_modules/react-bootstrap/esm/Collapse.js
-var import_classnames2 = __toESM(require_classnames());
-
-// node_modules/dom-helpers/esm/ownerWindow.js
-function ownerWindow(node) {
-  var doc = ownerDocument(node);
-  return doc && doc.defaultView || window;
-}
-
-// node_modules/dom-helpers/esm/getComputedStyle.js
-function getComputedStyle(node, psuedoElement) {
-  return ownerWindow(node).getComputedStyle(node, psuedoElement);
-}
-
-// node_modules/dom-helpers/esm/hyphenate.js
-var rUpper = /([A-Z])/g;
-function hyphenate(string) {
-  return string.replace(rUpper, "-$1").toLowerCase();
-}
-
-// node_modules/dom-helpers/esm/hyphenateStyle.js
-var msPattern = /^ms-/;
-function hyphenateStyleName(string) {
-  return hyphenate(string).replace(msPattern, "-ms-");
-}
-
-// node_modules/dom-helpers/esm/isTransform.js
-var supportedTransforms = /^((translate|rotate|scale)(X|Y|Z|3d)?|matrix(3d)?|perspective|skew(X|Y)?)$/i;
-function isTransform(value) {
-  return !!(value && supportedTransforms.test(value));
-}
-
-// node_modules/dom-helpers/esm/css.js
-function style(node, property) {
-  var css = "";
-  var transforms = "";
-  if (typeof property === "string") {
-    return node.style.getPropertyValue(hyphenateStyleName(property)) || getComputedStyle(node).getPropertyValue(hyphenateStyleName(property));
-  }
-  Object.keys(property).forEach(function(key) {
-    var value = property[key];
-    if (!value && value !== 0) {
-      node.style.removeProperty(hyphenateStyleName(key));
-    } else if (isTransform(key)) {
-      transforms += key + "(" + value + ") ";
-    } else {
-      css += hyphenateStyleName(key) + ": " + value + ";";
-    }
-  });
-  if (transforms) {
-    css += "transform: " + transforms + ";";
-  }
-  node.style.cssText += ";" + css;
-}
-var css_default = style;
-
-// node_modules/react-bootstrap/esm/Collapse.js
-var import_react4 = __toESM(require_react());
-
-// node_modules/react-transition-group/esm/Transition.js
-var import_prop_types2 = __toESM(require_prop_types());
-var import_react2 = __toESM(require_react());
-var import_react_dom = __toESM(require_react_dom());
-
-// node_modules/react-transition-group/esm/config.js
-var config_default = {
-  disabled: false
-};
-
-// node_modules/react-transition-group/esm/utils/PropTypes.js
-var import_prop_types = __toESM(require_prop_types());
-var timeoutsShape = true ? import_prop_types.default.oneOfType([import_prop_types.default.number, import_prop_types.default.shape({
-  enter: import_prop_types.default.number,
-  exit: import_prop_types.default.number,
-  appear: import_prop_types.default.number
-}).isRequired]) : null;
-var classNamesShape = true ? import_prop_types.default.oneOfType([import_prop_types.default.string, import_prop_types.default.shape({
-  enter: import_prop_types.default.string,
-  exit: import_prop_types.default.string,
-  active: import_prop_types.default.string
-}), import_prop_types.default.shape({
-  enter: import_prop_types.default.string,
-  enterDone: import_prop_types.default.string,
-  enterActive: import_prop_types.default.string,
-  exit: import_prop_types.default.string,
-  exitDone: import_prop_types.default.string,
-  exitActive: import_prop_types.default.string
-})]) : null;
-
-// node_modules/react-transition-group/esm/TransitionGroupContext.js
+var React2 = __toESM(require_react());
 var import_react = __toESM(require_react());
-var TransitionGroupContext_default = import_react.default.createContext(null);
-
-// node_modules/react-transition-group/esm/utils/reflow.js
-var forceReflow = function forceReflow2(node) {
-  return node.scrollTop;
-};
-
-// node_modules/react-transition-group/esm/Transition.js
-var UNMOUNTED = "unmounted";
-var EXITED = "exited";
-var ENTERING = "entering";
-var ENTERED = "entered";
-var EXITING = "exiting";
-var Transition = function(_React$Component) {
-  _inheritsLoose(Transition2, _React$Component);
-  function Transition2(props, context) {
-    var _this;
-    _this = _React$Component.call(this, props, context) || this;
-    var parentGroup = context;
-    var appear = parentGroup && !parentGroup.isMounting ? props.enter : props.appear;
-    var initialStatus;
-    _this.appearStatus = null;
-    if (props.in) {
-      if (appear) {
-        initialStatus = EXITED;
-        _this.appearStatus = ENTERING;
-      } else {
-        initialStatus = ENTERED;
-      }
-    } else {
-      if (props.unmountOnExit || props.mountOnEnter) {
-        initialStatus = UNMOUNTED;
-      } else {
-        initialStatus = EXITED;
-      }
-    }
-    _this.state = {
-      status: initialStatus
-    };
-    _this.nextCallback = null;
-    return _this;
-  }
-  Transition2.getDerivedStateFromProps = function getDerivedStateFromProps(_ref, prevState) {
-    var nextIn = _ref.in;
-    if (nextIn && prevState.status === UNMOUNTED) {
-      return {
-        status: EXITED
-      };
-    }
-    return null;
-  };
-  var _proto = Transition2.prototype;
-  _proto.componentDidMount = function componentDidMount() {
-    this.updateStatus(true, this.appearStatus);
-  };
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    var nextStatus = null;
-    if (prevProps !== this.props) {
-      var status = this.state.status;
-      if (this.props.in) {
-        if (status !== ENTERING && status !== ENTERED) {
-          nextStatus = ENTERING;
-        }
-      } else {
-        if (status === ENTERING || status === ENTERED) {
-          nextStatus = EXITING;
-        }
-      }
-    }
-    this.updateStatus(false, nextStatus);
-  };
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    this.cancelNextCallback();
-  };
-  _proto.getTimeouts = function getTimeouts() {
-    var timeout2 = this.props.timeout;
-    var exit, enter, appear;
-    exit = enter = appear = timeout2;
-    if (timeout2 != null && typeof timeout2 !== "number") {
-      exit = timeout2.exit;
-      enter = timeout2.enter;
-      appear = timeout2.appear !== void 0 ? timeout2.appear : enter;
-    }
-    return {
-      exit,
-      enter,
-      appear
-    };
-  };
-  _proto.updateStatus = function updateStatus(mounting, nextStatus) {
-    if (mounting === void 0) {
-      mounting = false;
-    }
-    if (nextStatus !== null) {
-      this.cancelNextCallback();
-      if (nextStatus === ENTERING) {
-        if (this.props.unmountOnExit || this.props.mountOnEnter) {
-          var node = this.props.nodeRef ? this.props.nodeRef.current : import_react_dom.default.findDOMNode(this);
-          if (node)
-            forceReflow(node);
-        }
-        this.performEnter(mounting);
-      } else {
-        this.performExit();
-      }
-    } else if (this.props.unmountOnExit && this.state.status === EXITED) {
-      this.setState({
-        status: UNMOUNTED
-      });
-    }
-  };
-  _proto.performEnter = function performEnter(mounting) {
-    var _this2 = this;
-    var enter = this.props.enter;
-    var appearing = this.context ? this.context.isMounting : mounting;
-    var _ref2 = this.props.nodeRef ? [appearing] : [import_react_dom.default.findDOMNode(this), appearing], maybeNode = _ref2[0], maybeAppearing = _ref2[1];
-    var timeouts = this.getTimeouts();
-    var enterTimeout = appearing ? timeouts.appear : timeouts.enter;
-    if (!mounting && !enter || config_default.disabled) {
-      this.safeSetState({
-        status: ENTERED
-      }, function() {
-        _this2.props.onEntered(maybeNode);
-      });
-      return;
-    }
-    this.props.onEnter(maybeNode, maybeAppearing);
-    this.safeSetState({
-      status: ENTERING
-    }, function() {
-      _this2.props.onEntering(maybeNode, maybeAppearing);
-      _this2.onTransitionEnd(enterTimeout, function() {
-        _this2.safeSetState({
-          status: ENTERED
-        }, function() {
-          _this2.props.onEntered(maybeNode, maybeAppearing);
-        });
-      });
-    });
-  };
-  _proto.performExit = function performExit() {
-    var _this3 = this;
-    var exit = this.props.exit;
-    var timeouts = this.getTimeouts();
-    var maybeNode = this.props.nodeRef ? void 0 : import_react_dom.default.findDOMNode(this);
-    if (!exit || config_default.disabled) {
-      this.safeSetState({
-        status: EXITED
-      }, function() {
-        _this3.props.onExited(maybeNode);
-      });
-      return;
-    }
-    this.props.onExit(maybeNode);
-    this.safeSetState({
-      status: EXITING
-    }, function() {
-      _this3.props.onExiting(maybeNode);
-      _this3.onTransitionEnd(timeouts.exit, function() {
-        _this3.safeSetState({
-          status: EXITED
-        }, function() {
-          _this3.props.onExited(maybeNode);
-        });
-      });
-    });
-  };
-  _proto.cancelNextCallback = function cancelNextCallback() {
-    if (this.nextCallback !== null) {
-      this.nextCallback.cancel();
-      this.nextCallback = null;
-    }
-  };
-  _proto.safeSetState = function safeSetState(nextState, callback) {
-    callback = this.setNextCallback(callback);
-    this.setState(nextState, callback);
-  };
-  _proto.setNextCallback = function setNextCallback(callback) {
-    var _this4 = this;
-    var active = true;
-    this.nextCallback = function(event) {
-      if (active) {
-        active = false;
-        _this4.nextCallback = null;
-        callback(event);
-      }
-    };
-    this.nextCallback.cancel = function() {
-      active = false;
-    };
-    return this.nextCallback;
-  };
-  _proto.onTransitionEnd = function onTransitionEnd(timeout2, handler) {
-    this.setNextCallback(handler);
-    var node = this.props.nodeRef ? this.props.nodeRef.current : import_react_dom.default.findDOMNode(this);
-    var doesNotHaveTimeoutOrListener = timeout2 == null && !this.props.addEndListener;
-    if (!node || doesNotHaveTimeoutOrListener) {
-      setTimeout(this.nextCallback, 0);
-      return;
-    }
-    if (this.props.addEndListener) {
-      var _ref3 = this.props.nodeRef ? [this.nextCallback] : [node, this.nextCallback], maybeNode = _ref3[0], maybeNextCallback = _ref3[1];
-      this.props.addEndListener(maybeNode, maybeNextCallback);
-    }
-    if (timeout2 != null) {
-      setTimeout(this.nextCallback, timeout2);
-    }
-  };
-  _proto.render = function render() {
-    var status = this.state.status;
-    if (status === UNMOUNTED) {
-      return null;
-    }
-    var _this$props = this.props, children = _this$props.children, _in = _this$props.in, _mountOnEnter = _this$props.mountOnEnter, _unmountOnExit = _this$props.unmountOnExit, _appear = _this$props.appear, _enter = _this$props.enter, _exit = _this$props.exit, _timeout = _this$props.timeout, _addEndListener = _this$props.addEndListener, _onEnter = _this$props.onEnter, _onEntering = _this$props.onEntering, _onEntered = _this$props.onEntered, _onExit = _this$props.onExit, _onExiting = _this$props.onExiting, _onExited = _this$props.onExited, _nodeRef = _this$props.nodeRef, childProps = _objectWithoutPropertiesLoose(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
-    return (
-      // allows for nested Transitions
-      import_react2.default.createElement(TransitionGroupContext_default.Provider, {
-        value: null
-      }, typeof children === "function" ? children(status, childProps) : import_react2.default.cloneElement(import_react2.default.Children.only(children), childProps))
-    );
-  };
-  return Transition2;
-}(import_react2.default.Component);
-Transition.contextType = TransitionGroupContext_default;
-Transition.propTypes = true ? {
-  /**
-   * A React reference to DOM element that need to transition:
-   * https://stackoverflow.com/a/51127130/4671932
-   *
-   *   - When `nodeRef` prop is used, `node` is not passed to callback functions
-   *      (e.g. `onEnter`) because user already has direct access to the node.
-   *   - When changing `key` prop of `Transition` in a `TransitionGroup` a new
-   *     `nodeRef` need to be provided to `Transition` with changed `key` prop
-   *     (see
-   *     [test/CSSTransition-test.js](https://github.com/reactjs/react-transition-group/blob/13435f897b3ab71f6e19d724f145596f5910581c/test/CSSTransition-test.js#L362-L437)).
-   */
-  nodeRef: import_prop_types2.default.shape({
-    current: typeof Element === "undefined" ? import_prop_types2.default.any : function(propValue, key, componentName, location, propFullName, secret) {
-      var value = propValue[key];
-      return import_prop_types2.default.instanceOf(value && "ownerDocument" in value ? value.ownerDocument.defaultView.Element : Element)(propValue, key, componentName, location, propFullName, secret);
-    }
-  }),
-  /**
-   * A `function` child can be used instead of a React element. This function is
-   * called with the current transition status (`'entering'`, `'entered'`,
-   * `'exiting'`, `'exited'`), which can be used to apply context
-   * specific props to a component.
-   *
-   * ```jsx
-   * <Transition in={this.state.in} timeout={150}>
-   *   {state => (
-   *     <MyComponent className={`fade fade-${state}`} />
-   *   )}
-   * </Transition>
-   * ```
-   */
-  children: import_prop_types2.default.oneOfType([import_prop_types2.default.func.isRequired, import_prop_types2.default.element.isRequired]).isRequired,
-  /**
-   * Show the component; triggers the enter or exit states
-   */
-  in: import_prop_types2.default.bool,
-  /**
-   * By default the child component is mounted immediately along with
-   * the parent `Transition` component. If you want to "lazy mount" the component on the
-   * first `in={true}` you can set `mountOnEnter`. After the first enter transition the component will stay
-   * mounted, even on "exited", unless you also specify `unmountOnExit`.
-   */
-  mountOnEnter: import_prop_types2.default.bool,
-  /**
-   * By default the child component stays mounted after it reaches the `'exited'` state.
-   * Set `unmountOnExit` if you'd prefer to unmount the component after it finishes exiting.
-   */
-  unmountOnExit: import_prop_types2.default.bool,
-  /**
-   * By default the child component does not perform the enter transition when
-   * it first mounts, regardless of the value of `in`. If you want this
-   * behavior, set both `appear` and `in` to `true`.
-   *
-   * > **Note**: there are no special appear states like `appearing`/`appeared`, this prop
-   * > only adds an additional enter transition. However, in the
-   * > `<CSSTransition>` component that first enter transition does result in
-   * > additional `.appear-*` classes, that way you can choose to style it
-   * > differently.
-   */
-  appear: import_prop_types2.default.bool,
-  /**
-   * Enable or disable enter transitions.
-   */
-  enter: import_prop_types2.default.bool,
-  /**
-   * Enable or disable exit transitions.
-   */
-  exit: import_prop_types2.default.bool,
-  /**
-   * The duration of the transition, in milliseconds.
-   * Required unless `addEndListener` is provided.
-   *
-   * You may specify a single timeout for all transitions:
-   *
-   * ```jsx
-   * timeout={500}
-   * ```
-   *
-   * or individually:
-   *
-   * ```jsx
-   * timeout={{
-   *  appear: 500,
-   *  enter: 300,
-   *  exit: 500,
-   * }}
-   * ```
-   *
-   * - `appear` defaults to the value of `enter`
-   * - `enter` defaults to `0`
-   * - `exit` defaults to `0`
-   *
-   * @type {number | { enter?: number, exit?: number, appear?: number }}
-   */
-  timeout: function timeout(props) {
-    var pt = timeoutsShape;
-    if (!props.addEndListener)
-      pt = pt.isRequired;
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-    return pt.apply(void 0, [props].concat(args));
-  },
-  /**
-   * Add a custom transition end trigger. Called with the transitioning
-   * DOM node and a `done` callback. Allows for more fine grained transition end
-   * logic. Timeouts are still used as a fallback if provided.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * ```jsx
-   * addEndListener={(node, done) => {
-   *   // use the css transitionend event to mark the finish of a transition
-   *   node.addEventListener('transitionend', done, false);
-   * }}
-   * ```
-   */
-  addEndListener: import_prop_types2.default.func,
-  /**
-   * Callback fired before the "entering" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool) -> void
-   */
-  onEnter: import_prop_types2.default.func,
-  /**
-   * Callback fired after the "entering" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEntering: import_prop_types2.default.func,
-  /**
-   * Callback fired after the "entered" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool) -> void
-   */
-  onEntered: import_prop_types2.default.func,
-  /**
-   * Callback fired before the "exiting" status is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement) -> void
-   */
-  onExit: import_prop_types2.default.func,
-  /**
-   * Callback fired after the "exiting" status is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement) -> void
-   */
-  onExiting: import_prop_types2.default.func,
-  /**
-   * Callback fired after the "exited" status is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement) -> void
-   */
-  onExited: import_prop_types2.default.func
-} : {};
-function noop() {
-}
-Transition.defaultProps = {
-  in: false,
-  mountOnEnter: false,
-  unmountOnExit: false,
-  appear: false,
-  enter: true,
-  exit: true,
-  onEnter: noop,
-  onEntering: noop,
-  onEntered: noop,
-  onExit: noop,
-  onExiting: noop,
-  onExited: noop
-};
-Transition.UNMOUNTED = UNMOUNTED;
-Transition.EXITED = EXITED;
-Transition.ENTERING = ENTERING;
-Transition.ENTERED = ENTERED;
-Transition.EXITING = EXITING;
-var Transition_default = Transition;
-
-// node_modules/dom-helpers/esm/triggerEvent.js
-function triggerEvent(node, eventName, bubbles, cancelable) {
-  if (bubbles === void 0) {
-    bubbles = false;
-  }
-  if (cancelable === void 0) {
-    cancelable = true;
-  }
-  if (node) {
-    var event = document.createEvent("HTMLEvents");
-    event.initEvent(eventName, bubbles, cancelable);
-    node.dispatchEvent(event);
-  }
-}
-
-// node_modules/dom-helpers/esm/transitionEnd.js
-function parseDuration(node) {
-  var str = css_default(node, "transitionDuration") || "";
-  var mult = str.indexOf("ms") === -1 ? 1e3 : 1;
-  return parseFloat(str) * mult;
-}
-function emulateTransitionEnd(element, duration, padding) {
-  if (padding === void 0) {
-    padding = 5;
-  }
-  var called = false;
-  var handle = setTimeout(function() {
-    if (!called)
-      triggerEvent(element, "transitionend", true);
-  }, duration + padding);
-  var remove = listen_default(element, "transitionend", function() {
-    called = true;
-  }, {
-    once: true
-  });
-  return function() {
-    clearTimeout(handle);
-    remove();
-  };
-}
-function transitionEnd(element, handler, duration, padding) {
-  if (duration == null)
-    duration = parseDuration(element) || 0;
-  var removeEmulate = emulateTransitionEnd(element, duration, padding);
-  var remove = listen_default(element, "transitionend", handler);
-  return function() {
-    removeEmulate();
-    remove();
-  };
-}
-
-// node_modules/react-bootstrap/esm/transitionEndListener.js
-function parseDuration2(node, property) {
-  const str = css_default(node, property) || "";
-  const mult = str.indexOf("ms") === -1 ? 1e3 : 1;
-  return parseFloat(str) * mult;
-}
-function transitionEndListener(element, handler) {
-  const duration = parseDuration2(element, "transitionDuration");
-  const delay = parseDuration2(element, "transitionDelay");
-  const remove = transitionEnd(element, (e) => {
-    if (e.target === element) {
-      remove();
-      handler(e);
-    }
-  }, duration + delay);
-}
-
-// node_modules/react-bootstrap/esm/createChainedFunction.js
-function createChainedFunction(...funcs) {
-  return funcs.filter((f) => f != null).reduce((acc, f) => {
-    if (typeof f !== "function") {
-      throw new Error("Invalid Argument Type, must only provide functions, undefined, or null.");
-    }
-    if (acc === null)
-      return f;
-    return function chainedFunction(...args) {
-      acc.apply(this, args);
-      f.apply(this, args);
-    };
-  }, null);
-}
-var createChainedFunction_default = createChainedFunction;
-
-// node_modules/react-bootstrap/esm/triggerBrowserReflow.js
-function triggerBrowserReflow(node) {
-  node.offsetHeight;
-}
-
-// node_modules/react-bootstrap/esm/TransitionWrapper.js
-var import_react3 = __toESM(require_react());
-
-// node_modules/react-bootstrap/esm/safeFindDOMNode.js
-var import_react_dom2 = __toESM(require_react_dom());
-function safeFindDOMNode(componentOrElement) {
-  if (componentOrElement && "setState" in componentOrElement) {
-    return import_react_dom2.default.findDOMNode(componentOrElement);
-  }
-  return componentOrElement != null ? componentOrElement : null;
-}
-
-// node_modules/react-bootstrap/esm/TransitionWrapper.js
 var import_jsx_runtime2 = __toESM(require_jsx_runtime());
-var TransitionWrapper = import_react3.default.forwardRef(({
-  onEnter,
-  onEntering,
-  onEntered,
-  onExit,
-  onExiting,
-  onExited,
-  addEndListener,
-  children,
-  childRef,
-  ...props
-}, ref) => {
-  const nodeRef = (0, import_react3.useRef)(null);
-  const mergedRef = useMergedRefs_default(nodeRef, childRef);
-  const attachRef = (r) => {
-    mergedRef(safeFindDOMNode(r));
-  };
-  const normalize = (callback) => (param) => {
-    if (callback && nodeRef.current) {
-      callback(nodeRef.current, param);
-    }
-  };
-  const handleEnter = (0, import_react3.useCallback)(normalize(onEnter), [onEnter]);
-  const handleEntering = (0, import_react3.useCallback)(normalize(onEntering), [onEntering]);
-  const handleEntered = (0, import_react3.useCallback)(normalize(onEntered), [onEntered]);
-  const handleExit = (0, import_react3.useCallback)(normalize(onExit), [onExit]);
-  const handleExiting = (0, import_react3.useCallback)(normalize(onExiting), [onExiting]);
-  const handleExited = (0, import_react3.useCallback)(normalize(onExited), [onExited]);
-  const handleAddEndListener = (0, import_react3.useCallback)(normalize(addEndListener), [addEndListener]);
-  return (0, import_jsx_runtime2.jsx)(Transition_default, {
-    ref,
-    ...props,
-    onEnter: handleEnter,
-    onEntered: handleEntered,
-    onEntering: handleEntering,
-    onExit: handleExit,
-    onExited: handleExited,
-    onExiting: handleExiting,
-    addEndListener: handleAddEndListener,
-    nodeRef,
-    children: typeof children === "function" ? (status, innerProps) => (
-      // TODO: Types for RTG missing innerProps, so need to cast.
-      children(status, {
-        ...innerProps,
-        ref: attachRef
-      })
-    ) : import_react3.default.cloneElement(children, {
-      ref: attachRef
-    })
-  });
-});
-var TransitionWrapper_default = TransitionWrapper;
-
-// node_modules/react-bootstrap/esm/Collapse.js
-var import_jsx_runtime3 = __toESM(require_jsx_runtime());
-var MARGINS = {
-  height: ["marginTop", "marginBottom"],
-  width: ["marginLeft", "marginRight"]
-};
-function getDefaultDimensionValue(dimension, elem) {
-  const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(1)}`;
-  const value = elem[offset];
-  const margins = MARGINS[dimension];
-  return value + // @ts-ignore
-  parseInt(css_default(elem, margins[0]), 10) + // @ts-ignore
-  parseInt(css_default(elem, margins[1]), 10);
-}
-var collapseStyles = {
-  [EXITED]: "collapse",
-  [EXITING]: "collapsing",
-  [ENTERING]: "collapsing",
-  [ENTERED]: "collapse show"
-};
-var Collapse = import_react4.default.forwardRef(({
-  onEnter,
-  onEntering,
-  onEntered,
-  onExit,
-  onExiting,
-  className,
-  children,
-  dimension = "height",
-  in: inProp = false,
-  timeout: timeout2 = 300,
-  mountOnEnter = false,
-  unmountOnExit = false,
-  appear = false,
-  getDimensionValue = getDefaultDimensionValue,
-  ...props
-}, ref) => {
-  const computedDimension = typeof dimension === "function" ? dimension() : dimension;
-  const handleEnter = (0, import_react4.useMemo)(() => createChainedFunction_default((elem) => {
-    elem.style[computedDimension] = "0";
-  }, onEnter), [computedDimension, onEnter]);
-  const handleEntering = (0, import_react4.useMemo)(() => createChainedFunction_default((elem) => {
-    const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(1)}`;
-    elem.style[computedDimension] = `${elem[scroll]}px`;
-  }, onEntering), [computedDimension, onEntering]);
-  const handleEntered = (0, import_react4.useMemo)(() => createChainedFunction_default((elem) => {
-    elem.style[computedDimension] = null;
-  }, onEntered), [computedDimension, onEntered]);
-  const handleExit = (0, import_react4.useMemo)(() => createChainedFunction_default((elem) => {
-    elem.style[computedDimension] = `${getDimensionValue(computedDimension, elem)}px`;
-    triggerBrowserReflow(elem);
-  }, onExit), [onExit, getDimensionValue, computedDimension]);
-  const handleExiting = (0, import_react4.useMemo)(() => createChainedFunction_default((elem) => {
-    elem.style[computedDimension] = null;
-  }, onExiting), [computedDimension, onExiting]);
-  return (0, import_jsx_runtime3.jsx)(TransitionWrapper_default, {
-    ref,
-    addEndListener: transitionEndListener,
-    ...props,
-    "aria-expanded": props.role ? inProp : null,
-    onEnter: handleEnter,
-    onEntering: handleEntering,
-    onEntered: handleEntered,
-    onExit: handleExit,
-    onExiting: handleExiting,
-    childRef: children.ref,
-    in: inProp,
-    timeout: timeout2,
-    mountOnEnter,
-    unmountOnExit,
-    appear,
-    children: (state, innerProps) => import_react4.default.cloneElement(children, {
-      ...innerProps,
-      className: (0, import_classnames2.default)(className, children.props.className, collapseStyles[state], computedDimension === "width" && "collapse-horizontal")
-    })
-  });
-});
-var Collapse_default = Collapse;
-
-// node_modules/react-bootstrap/esm/NavbarCollapse.js
-var import_jsx_runtime4 = __toESM(require_jsx_runtime());
-var NavbarCollapse = React6.forwardRef(({
+var NavbarCollapse = React2.forwardRef(({
   children,
   bsPrefix,
   ...props
 }, ref) => {
   bsPrefix = useBootstrapPrefix(bsPrefix, "navbar-collapse");
-  const context = (0, import_react5.useContext)(NavbarContext_default);
-  return (0, import_jsx_runtime4.jsx)(Collapse_default, {
+  const context = (0, import_react.useContext)(NavbarContext_default);
+  return (0, import_jsx_runtime2.jsx)(Collapse_default, {
     in: !!(context && context.expanded),
     ...props,
-    children: (0, import_jsx_runtime4.jsx)("div", {
+    children: (0, import_jsx_runtime2.jsx)("div", {
       ref,
       className: bsPrefix,
       children
@@ -835,11 +114,11 @@ NavbarCollapse.displayName = "NavbarCollapse";
 var NavbarCollapse_default = NavbarCollapse;
 
 // node_modules/react-bootstrap/esm/NavbarToggle.js
-var import_classnames3 = __toESM(require_classnames());
-var React7 = __toESM(require_react());
-var import_react6 = __toESM(require_react());
-var import_jsx_runtime5 = __toESM(require_jsx_runtime());
-var NavbarToggle = React7.forwardRef(({
+var import_classnames2 = __toESM(require_classnames());
+var React3 = __toESM(require_react());
+var import_react2 = __toESM(require_react());
+var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+var NavbarToggle = React3.forwardRef(({
   bsPrefix,
   className,
   children,
@@ -853,7 +132,7 @@ var NavbarToggle = React7.forwardRef(({
   const {
     onToggle,
     expanded
-  } = (0, import_react6.useContext)(NavbarContext_default) || {};
+  } = (0, import_react2.useContext)(NavbarContext_default) || {};
   const handleClick = useEventCallback((e) => {
     if (onClick)
       onClick(e);
@@ -863,13 +142,13 @@ var NavbarToggle = React7.forwardRef(({
   if (Component === "button") {
     props.type = "button";
   }
-  return (0, import_jsx_runtime5.jsx)(Component, {
+  return (0, import_jsx_runtime3.jsx)(Component, {
     ...props,
     ref,
     onClick: handleClick,
     "aria-label": label,
-    className: (0, import_classnames3.default)(className, bsPrefix, !expanded && "collapsed"),
-    children: children || (0, import_jsx_runtime5.jsx)("span", {
+    className: (0, import_classnames2.default)(className, bsPrefix, !expanded && "collapsed"),
+    children: children || (0, import_jsx_runtime3.jsx)("span", {
       className: `${bsPrefix}-icon`
     })
   });
@@ -878,14 +157,14 @@ NavbarToggle.displayName = "NavbarToggle";
 var NavbarToggle_default = NavbarToggle;
 
 // node_modules/react-bootstrap/esm/NavbarOffcanvas.js
-var React18 = __toESM(require_react());
-var import_react18 = __toESM(require_react());
+var React15 = __toESM(require_react());
+var import_react12 = __toESM(require_react());
 
 // node_modules/react-bootstrap/esm/Offcanvas.js
 var import_classnames9 = __toESM(require_classnames());
 
 // node_modules/@restart/hooks/esm/useMediaQuery.js
-var import_react7 = __toESM(require_react());
+var import_react3 = __toESM(require_react());
 var matchersByWindow = /* @__PURE__ */ new WeakMap();
 var getMatcher = (query, targetWindow) => {
   if (!query || !targetWindow)
@@ -902,7 +181,7 @@ var getMatcher = (query, targetWindow) => {
 };
 function useMediaQuery(query, targetWindow = typeof window === "undefined" ? void 0 : window) {
   const mql = getMatcher(query, targetWindow);
-  const [matches, setMatches] = (0, import_react7.useState)(() => mql ? mql.matches : false);
+  const [matches, setMatches] = (0, import_react3.useState)(() => mql ? mql.matches : false);
   useIsomorphicEffect_default(() => {
     let mql2 = getMatcher(query, targetWindow);
     if (!mql2) {
@@ -928,7 +207,7 @@ function useMediaQuery(query, targetWindow = typeof window === "undefined" ? voi
 }
 
 // node_modules/@restart/hooks/esm/useBreakpoint.js
-var import_react8 = __toESM(require_react());
+var import_react4 = __toESM(require_react());
 function createBreakpointHook(breakpointValues) {
   const names = Object.keys(breakpointValues);
   function and(query, next) {
@@ -968,7 +247,7 @@ function createBreakpointHook(breakpointValues) {
         [breakpointOrMap]: direction
       };
     }
-    let query = (0, import_react8.useMemo)(() => Object.entries(breakpointMap).reduce((query2, [key, direction2]) => {
+    let query = (0, import_react4.useMemo)(() => Object.entries(breakpointMap).reduce((query2, [key, direction2]) => {
       if (direction2 === "up" || direction2 === true) {
         query2 = and(query2, getMinQuery(key));
       }
@@ -992,8 +271,8 @@ var useBreakpoint = createBreakpointHook({
 var useBreakpoint_default = useBreakpoint;
 
 // node_modules/react-bootstrap/esm/Offcanvas.js
-var React17 = __toESM(require_react());
-var import_react17 = __toESM(require_react());
+var React14 = __toESM(require_react());
+var import_react11 = __toESM(require_react());
 
 // node_modules/dom-helpers/esm/activeElement.js
 function activeElement(doc) {
@@ -1011,24 +290,9 @@ function activeElement(doc) {
 }
 
 // node_modules/@restart/ui/esm/Modal.js
-var import_react14 = __toESM(require_react());
-var React9 = __toESM(require_react());
-var import_react_dom3 = __toESM(require_react_dom());
-
-// node_modules/@restart/hooks/esm/useUpdatedRef.js
-var import_react9 = __toESM(require_react());
-function useUpdatedRef(value) {
-  const valueRef = (0, import_react9.useRef)(value);
-  valueRef.current = value;
-  return valueRef;
-}
-
-// node_modules/@restart/hooks/esm/useWillUnmount.js
-var import_react10 = __toESM(require_react());
-function useWillUnmount(fn) {
-  const onUnmount = useUpdatedRef(fn);
-  (0, import_react10.useEffect)(() => () => onUnmount.current(), []);
-}
+var import_react8 = __toESM(require_react());
+var React5 = __toESM(require_react());
+var import_react_dom = __toESM(require_react_dom());
 
 // node_modules/@restart/ui/esm/getScrollbarWidth.js
 function getBodyScrollbarWidth(ownerDocument2 = document) {
@@ -1060,7 +324,7 @@ var ModalManager = class {
   removeModalAttributes(_modal) {
   }
   setContainerStyle(containerState) {
-    const style2 = {
+    const style = {
       overflow: "hidden"
     };
     const paddingProp = this.isRTL ? "paddingLeft" : "paddingRight";
@@ -1070,10 +334,10 @@ var ModalManager = class {
       [paddingProp]: container.style[paddingProp]
     };
     if (containerState.scrollBarWidth) {
-      style2[paddingProp] = `${parseInt(css_default(container, paddingProp) || "0", 10) + containerState.scrollBarWidth}px`;
+      style[paddingProp] = `${parseInt(css_default(container, paddingProp) || "0", 10) + containerState.scrollBarWidth}px`;
     }
     container.setAttribute(OPEN_DATA_ATTRIBUTE, "");
-    css_default(container, style2);
+    css_default(container, style);
   }
   reset() {
     [...this.modals].forEach((m) => this.remove(m));
@@ -1121,7 +385,7 @@ var ModalManager = class {
 var ModalManager_default = ModalManager;
 
 // node_modules/@restart/ui/esm/useWaitForDOMRef.js
-var import_react11 = __toESM(require_react());
+var import_react5 = __toESM(require_react());
 var resolveContainerRef = (ref, document2) => {
   if (!canUseDOM_default)
     return null;
@@ -1137,18 +401,18 @@ var resolveContainerRef = (ref, document2) => {
 };
 function useWaitForDOMRef(ref, onResolved) {
   const window2 = useWindow();
-  const [resolvedRef, setRef] = (0, import_react11.useState)(() => resolveContainerRef(ref, window2 == null ? void 0 : window2.document));
+  const [resolvedRef, setRef] = (0, import_react5.useState)(() => resolveContainerRef(ref, window2 == null ? void 0 : window2.document));
   if (!resolvedRef) {
     const earlyRef = resolveContainerRef(ref);
     if (earlyRef)
       setRef(earlyRef);
   }
-  (0, import_react11.useEffect)(() => {
+  (0, import_react5.useEffect)(() => {
     if (onResolved && resolvedRef) {
       onResolved(resolvedRef);
     }
   }, [onResolved, resolvedRef]);
-  (0, import_react11.useEffect)(() => {
+  (0, import_react5.useEffect)(() => {
     const nextRef = resolveContainerRef(ref);
     if (nextRef !== resolvedRef) {
       setRef(nextRef);
@@ -1158,10 +422,10 @@ function useWaitForDOMRef(ref, onResolved) {
 }
 
 // node_modules/@restart/ui/esm/ImperativeTransition.js
-var import_react13 = __toESM(require_react());
+var import_react7 = __toESM(require_react());
 
 // node_modules/@restart/ui/esm/NoopTransition.js
-var import_react12 = __toESM(require_react());
+var import_react6 = __toESM(require_react());
 function NoopTransition({
   children,
   in: inProp,
@@ -1169,10 +433,10 @@ function NoopTransition({
   mountOnEnter,
   unmountOnExit
 }) {
-  const ref = (0, import_react12.useRef)(null);
-  const hasEnteredRef = (0, import_react12.useRef)(inProp);
+  const ref = (0, import_react6.useRef)(null);
+  const hasEnteredRef = (0, import_react6.useRef)(inProp);
   const handleExited = useEventCallback(onExited);
-  (0, import_react12.useEffect)(() => {
+  (0, import_react6.useEffect)(() => {
     if (inProp)
       hasEnteredRef.current = true;
     else {
@@ -1180,7 +444,7 @@ function NoopTransition({
     }
   }, [inProp, handleExited]);
   const combinedRef = useMergedRefs_default(ref, children.ref);
-  const child = (0, import_react12.cloneElement)(children, {
+  const child = (0, import_react6.cloneElement)(children, {
     ref: combinedRef
   });
   if (inProp)
@@ -1196,13 +460,13 @@ function NoopTransition({
 var NoopTransition_default = NoopTransition;
 
 // node_modules/@restart/ui/esm/ImperativeTransition.js
-var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+var import_jsx_runtime4 = __toESM(require_jsx_runtime());
 function useTransition({
   in: inProp,
   onTransition
 }) {
-  const ref = (0, import_react13.useRef)(null);
-  const isInitialRef = (0, import_react13.useRef)(true);
+  const ref = (0, import_react7.useRef)(null);
+  const isInitialRef = (0, import_react7.useRef)(true);
   const handleTransition = useEventCallback(onTransition);
   useIsomorphicEffect_default(() => {
     if (!ref.current) {
@@ -1234,7 +498,7 @@ function ImperativeTransition({
   onEntered,
   transition
 }) {
-  const [exited, setExited] = (0, import_react13.useState)(!inProp);
+  const [exited, setExited] = (0, import_react7.useState)(!inProp);
   if (inProp && exited) {
     setExited(false);
   }
@@ -1259,20 +523,20 @@ function ImperativeTransition({
     }
   });
   const combinedRef = useMergedRefs_default(ref, children.ref);
-  return exited && !inProp ? null : (0, import_react13.cloneElement)(children, {
+  return exited && !inProp ? null : (0, import_react7.cloneElement)(children, {
     ref: combinedRef
   });
 }
 function renderTransition(Component, runTransition, props) {
   if (Component) {
-    return (0, import_jsx_runtime6.jsx)(Component, Object.assign({}, props));
+    return (0, import_jsx_runtime4.jsx)(Component, Object.assign({}, props));
   }
   if (runTransition) {
-    return (0, import_jsx_runtime6.jsx)(ImperativeTransition, Object.assign({}, props, {
+    return (0, import_jsx_runtime4.jsx)(ImperativeTransition, Object.assign({}, props, {
       transition: runTransition
     }));
   }
-  return (0, import_jsx_runtime6.jsx)(NoopTransition_default, Object.assign({}, props));
+  return (0, import_jsx_runtime4.jsx)(NoopTransition_default, Object.assign({}, props));
 }
 
 // node_modules/@restart/ui/esm/utils.js
@@ -1281,11 +545,11 @@ function isEscKey(e) {
 }
 
 // node_modules/@restart/ui/esm/Modal.js
+var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+var import_jsx_runtime6 = __toESM(require_jsx_runtime());
 var import_jsx_runtime7 = __toESM(require_jsx_runtime());
-var import_jsx_runtime8 = __toESM(require_jsx_runtime());
-var import_jsx_runtime9 = __toESM(require_jsx_runtime());
 var _excluded = ["show", "role", "className", "style", "children", "backdrop", "keyboard", "onBackdropClick", "onEscapeKeyDown", "transition", "runTransition", "backdropTransition", "runBackdropTransition", "autoFocus", "enforceFocus", "restoreFocus", "restoreFocusOptions", "renderDialog", "renderBackdrop", "manager", "container", "onShow", "onHide", "onExit", "onExited", "onExiting", "onEnter", "onEntering", "onEntered"];
-function _objectWithoutPropertiesLoose2(source, excluded) {
+function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null)
     return {};
   var target = {};
@@ -1310,7 +574,7 @@ function getManager(window2) {
 function useModalManager(provided) {
   const window2 = useWindow();
   const modalManager = provided || getManager(window2);
-  const modal = (0, import_react14.useRef)({
+  const modal = (0, import_react8.useRef)({
     dialog: null,
     backdrop: null
   });
@@ -1318,20 +582,20 @@ function useModalManager(provided) {
     add: () => modalManager.add(modal.current),
     remove: () => modalManager.remove(modal.current),
     isTopModal: () => modalManager.isTopModal(modal.current),
-    setDialogRef: (0, import_react14.useCallback)((ref) => {
+    setDialogRef: (0, import_react8.useCallback)((ref) => {
       modal.current.dialog = ref;
     }, []),
-    setBackdropRef: (0, import_react14.useCallback)((ref) => {
+    setBackdropRef: (0, import_react8.useCallback)((ref) => {
       modal.current.backdrop = ref;
     }, [])
   });
 }
-var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
+var Modal = (0, import_react8.forwardRef)((_ref, ref) => {
   let {
     show = false,
     role = "dialog",
     className,
-    style: style2,
+    style,
     children,
     backdrop = true,
     keyboard = true,
@@ -1346,7 +610,7 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
     restoreFocus = true,
     restoreFocusOptions,
     renderDialog,
-    renderBackdrop = (props) => (0, import_jsx_runtime7.jsx)("div", Object.assign({}, props)),
+    renderBackdrop = (props) => (0, import_jsx_runtime5.jsx)("div", Object.assign({}, props)),
     manager: providedManager,
     container: containerRef,
     onShow,
@@ -1358,17 +622,17 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
     onEnter,
     onEntering,
     onEntered
-  } = _ref, rest = _objectWithoutPropertiesLoose2(_ref, _excluded);
-  const ownerWindow2 = useWindow();
+  } = _ref, rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  const ownerWindow = useWindow();
   const container = useWaitForDOMRef(containerRef);
   const modal = useModalManager(providedManager);
   const isMounted = useMounted();
   const prevShow = usePrevious(show);
-  const [exited, setExited] = (0, import_react14.useState)(!show);
-  const lastFocusRef = (0, import_react14.useRef)(null);
-  (0, import_react14.useImperativeHandle)(ref, () => modal, [modal]);
+  const [exited, setExited] = (0, import_react8.useState)(!show);
+  const lastFocusRef = (0, import_react8.useRef)(null);
+  (0, import_react8.useImperativeHandle)(ref, () => modal, [modal]);
   if (canUseDOM_default && !prevShow && show) {
-    lastFocusRef.current = activeElement(ownerWindow2 == null ? void 0 : ownerWindow2.document);
+    lastFocusRef.current = activeElement(ownerWindow == null ? void 0 : ownerWindow.document);
   }
   if (show && exited) {
     setExited(false);
@@ -1389,7 +653,7 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
     }
     if (autoFocus) {
       var _modal$dialog$ownerDo, _modal$dialog;
-      const currentActiveElement = activeElement((_modal$dialog$ownerDo = (_modal$dialog = modal.dialog) == null ? void 0 : _modal$dialog.ownerDocument) != null ? _modal$dialog$ownerDo : ownerWindow2 == null ? void 0 : ownerWindow2.document);
+      const currentActiveElement = activeElement((_modal$dialog$ownerDo = (_modal$dialog = modal.dialog) == null ? void 0 : _modal$dialog.ownerDocument) != null ? _modal$dialog$ownerDo : ownerWindow == null ? void 0 : ownerWindow.document);
       if (modal.dialog && currentActiveElement && !contains(modal.dialog, currentActiveElement)) {
         lastFocusRef.current = currentActiveElement;
         modal.dialog.focus();
@@ -1406,7 +670,7 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
       lastFocusRef.current = null;
     }
   });
-  (0, import_react14.useEffect)(() => {
+  (0, import_react8.useEffect)(() => {
     if (!show || !container)
       return;
     handleShow();
@@ -1416,7 +680,7 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
     /* should never change: */
     handleShow
   ]);
-  (0, import_react14.useEffect)(() => {
+  (0, import_react8.useEffect)(() => {
     if (!exited)
       return;
     handleHide();
@@ -1428,7 +692,7 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
     if (!enforceFocus || !isMounted() || !modal.isTopModal()) {
       return;
     }
-    const currentActiveElement = activeElement(ownerWindow2 == null ? void 0 : ownerWindow2.document);
+    const currentActiveElement = activeElement(ownerWindow == null ? void 0 : ownerWindow.document);
     if (modal.dialog && currentActiveElement && !contains(modal.dialog, currentActiveElement)) {
       modal.dialog.focus();
     }
@@ -1450,8 +714,8 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
       }
     }
   });
-  const removeFocusListenerRef = (0, import_react14.useRef)();
-  const removeKeydownListenerRef = (0, import_react14.useRef)();
+  const removeFocusListenerRef = (0, import_react8.useRef)();
+  const removeKeydownListenerRef = (0, import_react8.useRef)();
   const handleHidden = (...args) => {
     setExited(true);
     onExited == null ? void 0 : onExited(...args);
@@ -1465,12 +729,12 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
     // apparently only works on the dialog role element
     "aria-modal": role === "dialog" ? true : void 0
   }, rest, {
-    style: style2,
+    style,
     className,
     tabIndex: -1
   });
-  let dialog = renderDialog ? renderDialog(dialogProps) : (0, import_jsx_runtime7.jsx)("div", Object.assign({}, dialogProps, {
-    children: React9.cloneElement(children, {
+  let dialog = renderDialog ? renderDialog(dialogProps) : (0, import_jsx_runtime5.jsx)("div", Object.assign({}, dialogProps, {
+    children: React5.cloneElement(children, {
       role: "document"
     })
   }));
@@ -1501,8 +765,8 @@ var Modal = (0, import_react14.forwardRef)((_ref, ref) => {
       children: backdropElement
     });
   }
-  return (0, import_jsx_runtime7.jsx)(import_jsx_runtime8.Fragment, {
-    children: import_react_dom3.default.createPortal((0, import_jsx_runtime9.jsxs)(import_jsx_runtime8.Fragment, {
+  return (0, import_jsx_runtime5.jsx)(import_jsx_runtime6.Fragment, {
+    children: import_react_dom.default.createPortal((0, import_jsx_runtime7.jsxs)(import_jsx_runtime6.Fragment, {
       children: [backdropElement, dialog]
     }), container)
   });
@@ -1513,15 +777,15 @@ var Modal_default = Object.assign(Modal, {
 });
 
 // node_modules/react-bootstrap/esm/Fade.js
-var import_classnames4 = __toESM(require_classnames());
-var React10 = __toESM(require_react());
-var import_react15 = __toESM(require_react());
-var import_jsx_runtime10 = __toESM(require_jsx_runtime());
+var import_classnames3 = __toESM(require_classnames());
+var React6 = __toESM(require_react());
+var import_react9 = __toESM(require_react());
+var import_jsx_runtime8 = __toESM(require_jsx_runtime());
 var fadeStyles = {
   [ENTERING]: "show",
   [ENTERED]: "show"
 };
-var Fade = React10.forwardRef(({
+var Fade = React6.forwardRef(({
   className,
   children,
   transitionClasses = {},
@@ -1536,19 +800,19 @@ var Fade = React10.forwardRef(({
     appear: false,
     ...rest
   };
-  const handleEnter = (0, import_react15.useCallback)((node, isAppearing) => {
+  const handleEnter = (0, import_react9.useCallback)((node, isAppearing) => {
     triggerBrowserReflow(node);
     onEnter == null ? void 0 : onEnter(node, isAppearing);
   }, [onEnter]);
-  return (0, import_jsx_runtime10.jsx)(TransitionWrapper_default, {
+  return (0, import_jsx_runtime8.jsx)(TransitionWrapper_default, {
     ref,
     addEndListener: transitionEndListener,
     ...props,
     onEnter: handleEnter,
     childRef: children.ref,
-    children: (status, innerProps) => React10.cloneElement(children, {
+    children: (status, innerProps) => React6.cloneElement(children, {
       ...innerProps,
-      className: (0, import_classnames4.default)("fade", className, children.props.className, fadeStyles[status], transitionClasses[status])
+      className: (0, import_classnames3.default)("fade", className, children.props.className, fadeStyles[status], transitionClasses[status])
     })
   });
 });
@@ -1556,17 +820,34 @@ Fade.displayName = "Fade";
 var Fade_default = Fade;
 
 // node_modules/react-bootstrap/esm/OffcanvasBody.js
-var OffcanvasBody_default = createWithBsPrefix("offcanvas-body");
+var React7 = __toESM(require_react());
+var import_classnames4 = __toESM(require_classnames());
+var import_jsx_runtime9 = __toESM(require_jsx_runtime());
+var OffcanvasBody = React7.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = "div",
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, "offcanvas-body");
+  return (0, import_jsx_runtime9.jsx)(Component, {
+    ref,
+    className: (0, import_classnames4.default)(className, bsPrefix),
+    ...props
+  });
+});
+OffcanvasBody.displayName = "OffcanvasBody";
+var OffcanvasBody_default = OffcanvasBody;
 
 // node_modules/react-bootstrap/esm/OffcanvasToggling.js
 var import_classnames5 = __toESM(require_classnames());
-var React11 = __toESM(require_react());
-var import_jsx_runtime11 = __toESM(require_jsx_runtime());
+var React8 = __toESM(require_react());
+var import_jsx_runtime10 = __toESM(require_jsx_runtime());
 var transitionStyles = {
   [ENTERING]: "show",
   [ENTERED]: "show"
 };
-var OffcanvasToggling = React11.forwardRef(({
+var OffcanvasToggling = React8.forwardRef(({
   bsPrefix,
   className,
   children,
@@ -1577,7 +858,7 @@ var OffcanvasToggling = React11.forwardRef(({
   ...props
 }, ref) => {
   bsPrefix = useBootstrapPrefix(bsPrefix, "offcanvas");
-  return (0, import_jsx_runtime11.jsx)(TransitionWrapper_default, {
+  return (0, import_jsx_runtime10.jsx)(TransitionWrapper_default, {
     ref,
     addEndListener: transitionEndListener,
     in: inProp,
@@ -1586,7 +867,7 @@ var OffcanvasToggling = React11.forwardRef(({
     appear,
     ...props,
     childRef: children.ref,
-    children: (status, innerProps) => React11.cloneElement(children, {
+    children: (status, innerProps) => React8.cloneElement(children, {
       ...innerProps,
       className: (0, import_classnames5.default)(className, children.props.className, (status === ENTERING || status === EXITING) && `${bsPrefix}-toggling`, transitionStyles[status])
     })
@@ -1596,8 +877,8 @@ OffcanvasToggling.displayName = "OffcanvasToggling";
 var OffcanvasToggling_default = OffcanvasToggling;
 
 // node_modules/react-bootstrap/esm/ModalContext.js
-var React12 = __toESM(require_react());
-var ModalContext = React12.createContext({
+var React9 = __toESM(require_react());
+var ModalContext = React9.createContext({
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onHide() {
   }
@@ -1606,35 +887,35 @@ var ModalContext_default = ModalContext;
 
 // node_modules/react-bootstrap/esm/OffcanvasHeader.js
 var import_classnames7 = __toESM(require_classnames());
-var React15 = __toESM(require_react());
+var React12 = __toESM(require_react());
 
 // node_modules/react-bootstrap/esm/AbstractModalHeader.js
-var React14 = __toESM(require_react());
-var import_react16 = __toESM(require_react());
+var React11 = __toESM(require_react());
+var import_react10 = __toESM(require_react());
 
 // node_modules/react-bootstrap/esm/CloseButton.js
-var import_prop_types3 = __toESM(require_prop_types());
-var React13 = __toESM(require_react());
+var import_prop_types = __toESM(require_prop_types());
+var React10 = __toESM(require_react());
 var import_classnames6 = __toESM(require_classnames());
-var import_jsx_runtime12 = __toESM(require_jsx_runtime());
+var import_jsx_runtime11 = __toESM(require_jsx_runtime());
 var propTypes = {
   /** An accessible label indicating the relevant information about the Close Button. */
-  "aria-label": import_prop_types3.default.string,
+  "aria-label": import_prop_types.default.string,
   /** A callback fired after the Close Button is clicked. */
-  onClick: import_prop_types3.default.func,
+  onClick: import_prop_types.default.func,
   /**
    * Render different color variant for the button.
    *
    * Omitting this will render the default dark color.
    */
-  variant: import_prop_types3.default.oneOf(["white"])
+  variant: import_prop_types.default.oneOf(["white"])
 };
-var CloseButton = React13.forwardRef(({
+var CloseButton = React10.forwardRef(({
   className,
   variant,
   "aria-label": ariaLabel = "Close",
   ...props
-}, ref) => (0, import_jsx_runtime12.jsx)("button", {
+}, ref) => (0, import_jsx_runtime11.jsx)("button", {
   ref,
   type: "button",
   className: (0, import_classnames6.default)("btn-close", variant && `btn-close-${variant}`, className),
@@ -1646,9 +927,9 @@ CloseButton.propTypes = propTypes;
 var CloseButton_default = CloseButton;
 
 // node_modules/react-bootstrap/esm/AbstractModalHeader.js
+var import_jsx_runtime12 = __toESM(require_jsx_runtime());
 var import_jsx_runtime13 = __toESM(require_jsx_runtime());
-var import_jsx_runtime14 = __toESM(require_jsx_runtime());
-var AbstractModalHeader = React14.forwardRef(({
+var AbstractModalHeader = React11.forwardRef(({
   closeLabel = "Close",
   closeVariant,
   closeButton = false,
@@ -1656,15 +937,15 @@ var AbstractModalHeader = React14.forwardRef(({
   children,
   ...props
 }, ref) => {
-  const context = (0, import_react16.useContext)(ModalContext_default);
+  const context = (0, import_react10.useContext)(ModalContext_default);
   const handleClick = useEventCallback(() => {
     context == null ? void 0 : context.onHide();
     onHide == null ? void 0 : onHide();
   });
-  return (0, import_jsx_runtime14.jsxs)("div", {
+  return (0, import_jsx_runtime13.jsxs)("div", {
     ref,
     ...props,
-    children: [children, closeButton && (0, import_jsx_runtime13.jsx)(CloseButton_default, {
+    children: [children, closeButton && (0, import_jsx_runtime12.jsx)(CloseButton_default, {
       "aria-label": closeLabel,
       variant: closeVariant,
       onClick: handleClick
@@ -1674,8 +955,8 @@ var AbstractModalHeader = React14.forwardRef(({
 var AbstractModalHeader_default = AbstractModalHeader;
 
 // node_modules/react-bootstrap/esm/OffcanvasHeader.js
-var import_jsx_runtime15 = __toESM(require_jsx_runtime());
-var OffcanvasHeader = React15.forwardRef(({
+var import_jsx_runtime14 = __toESM(require_jsx_runtime());
+var OffcanvasHeader = React12.forwardRef(({
   bsPrefix,
   className,
   closeLabel = "Close",
@@ -1683,7 +964,7 @@ var OffcanvasHeader = React15.forwardRef(({
   ...props
 }, ref) => {
   bsPrefix = useBootstrapPrefix(bsPrefix, "offcanvas-header");
-  return (0, import_jsx_runtime15.jsx)(AbstractModalHeader_default, {
+  return (0, import_jsx_runtime14.jsx)(AbstractModalHeader_default, {
     ref,
     ...props,
     className: (0, import_classnames7.default)(className, bsPrefix),
@@ -1694,21 +975,26 @@ var OffcanvasHeader = React15.forwardRef(({
 OffcanvasHeader.displayName = "OffcanvasHeader";
 var OffcanvasHeader_default = OffcanvasHeader;
 
-// node_modules/react-bootstrap/esm/divWithClassName.js
-var React16 = __toESM(require_react());
-var import_classnames8 = __toESM(require_classnames());
-var import_jsx_runtime16 = __toESM(require_jsx_runtime());
-var divWithClassName_default = (className) => React16.forwardRef((p, ref) => (0, import_jsx_runtime16.jsx)("div", {
-  ...p,
-  ref,
-  className: (0, import_classnames8.default)(p.className, className)
-}));
-
 // node_modules/react-bootstrap/esm/OffcanvasTitle.js
+var React13 = __toESM(require_react());
+var import_classnames8 = __toESM(require_classnames());
+var import_jsx_runtime15 = __toESM(require_jsx_runtime());
 var DivStyledAsH5 = divWithClassName_default("h5");
-var OffcanvasTitle_default = createWithBsPrefix("offcanvas-title", {
-  Component: DivStyledAsH5
+var OffcanvasTitle = React13.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = DivStyledAsH5,
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, "offcanvas-title");
+  return (0, import_jsx_runtime15.jsx)(Component, {
+    ref,
+    className: (0, import_classnames8.default)(className, bsPrefix),
+    ...props
+  });
 });
+OffcanvasTitle.displayName = "OffcanvasTitle";
+var OffcanvasTitle_default = OffcanvasTitle;
 
 // node_modules/dom-helpers/esm/hasClass.js
 function hasClass(element, className) {
@@ -1797,20 +1083,20 @@ function getSharedManager(options) {
 var BootstrapModalManager_default = BootstrapModalManager;
 
 // node_modules/react-bootstrap/esm/Offcanvas.js
+var import_jsx_runtime16 = __toESM(require_jsx_runtime());
 var import_jsx_runtime17 = __toESM(require_jsx_runtime());
 var import_jsx_runtime18 = __toESM(require_jsx_runtime());
-var import_jsx_runtime19 = __toESM(require_jsx_runtime());
 function DialogTransition(props) {
-  return (0, import_jsx_runtime17.jsx)(OffcanvasToggling_default, {
+  return (0, import_jsx_runtime16.jsx)(OffcanvasToggling_default, {
     ...props
   });
 }
 function BackdropTransition(props) {
-  return (0, import_jsx_runtime17.jsx)(Fade_default, {
+  return (0, import_jsx_runtime16.jsx)(Fade_default, {
     ...props
   });
 }
-var Offcanvas = React17.forwardRef(({
+var Offcanvas = React14.forwardRef(({
   bsPrefix,
   className,
   children,
@@ -1841,21 +1127,21 @@ var Offcanvas = React17.forwardRef(({
   renderStaticNode = false,
   ...props
 }, ref) => {
-  const modalManager = (0, import_react17.useRef)();
+  const modalManager = (0, import_react11.useRef)();
   bsPrefix = useBootstrapPrefix(bsPrefix, "offcanvas");
   const {
     onToggle
-  } = (0, import_react17.useContext)(NavbarContext_default) || {};
-  const [showOffcanvas, setShowOffcanvas] = (0, import_react17.useState)(false);
+  } = (0, import_react11.useContext)(NavbarContext_default) || {};
+  const [showOffcanvas, setShowOffcanvas] = (0, import_react11.useState)(false);
   const hideResponsiveOffcanvas = useBreakpoint_default(responsive || "xs", "up");
-  (0, import_react17.useEffect)(() => {
+  (0, import_react11.useEffect)(() => {
     setShowOffcanvas(responsive ? show && !hideResponsiveOffcanvas : show);
   }, [show, responsive, hideResponsiveOffcanvas]);
   const handleHide = useEventCallback(() => {
     onToggle == null ? void 0 : onToggle();
     onHide == null ? void 0 : onHide();
   });
-  const modalContext = (0, import_react17.useMemo)(() => ({
+  const modalContext = (0, import_react11.useMemo)(() => ({
     onHide: handleHide
   }), [handleHide]);
   function getModalManager() {
@@ -1880,21 +1166,21 @@ var Offcanvas = React17.forwardRef(({
       node.style.visibility = "";
     onExited == null ? void 0 : onExited(...args);
   };
-  const renderBackdrop = (0, import_react17.useCallback)((backdropProps) => (0, import_jsx_runtime17.jsx)("div", {
+  const renderBackdrop = (0, import_react11.useCallback)((backdropProps) => (0, import_jsx_runtime16.jsx)("div", {
     ...backdropProps,
     className: (0, import_classnames9.default)(`${bsPrefix}-backdrop`, backdropClassName)
   }), [backdropClassName, bsPrefix]);
-  const renderDialog = (dialogProps) => (0, import_jsx_runtime17.jsx)("div", {
+  const renderDialog = (dialogProps) => (0, import_jsx_runtime16.jsx)("div", {
     ...dialogProps,
     ...props,
     className: (0, import_classnames9.default)(className, responsive ? `${bsPrefix}-${responsive}` : bsPrefix, `${bsPrefix}-${placement}`),
     "aria-labelledby": ariaLabelledby,
     children
   });
-  return (0, import_jsx_runtime19.jsxs)(import_jsx_runtime18.Fragment, {
-    children: [!showOffcanvas && (responsive || renderStaticNode) && renderDialog({}), (0, import_jsx_runtime17.jsx)(ModalContext_default.Provider, {
+  return (0, import_jsx_runtime18.jsxs)(import_jsx_runtime17.Fragment, {
+    children: [!showOffcanvas && (responsive || renderStaticNode) && renderDialog({}), (0, import_jsx_runtime16.jsx)(ModalContext_default.Provider, {
       value: modalContext,
-      children: (0, import_jsx_runtime17.jsx)(Modal_default, {
+      children: (0, import_jsx_runtime16.jsx)(Modal_default, {
         show: showOffcanvas,
         ref,
         backdrop,
@@ -1930,10 +1216,10 @@ var Offcanvas_default = Object.assign(Offcanvas, {
 });
 
 // node_modules/react-bootstrap/esm/NavbarOffcanvas.js
-var import_jsx_runtime20 = __toESM(require_jsx_runtime());
-var NavbarOffcanvas = React18.forwardRef((props, ref) => {
-  const context = (0, import_react18.useContext)(NavbarContext_default);
-  return (0, import_jsx_runtime20.jsx)(Offcanvas_default, {
+var import_jsx_runtime19 = __toESM(require_jsx_runtime());
+var NavbarOffcanvas = React15.forwardRef((props, ref) => {
+  const context = (0, import_react12.useContext)(NavbarContext_default);
+  return (0, import_jsx_runtime19.jsx)(Offcanvas_default, {
     ref,
     show: !!(context != null && context.expanded),
     ...props,
@@ -1943,12 +1229,29 @@ var NavbarOffcanvas = React18.forwardRef((props, ref) => {
 NavbarOffcanvas.displayName = "NavbarOffcanvas";
 var NavbarOffcanvas_default = NavbarOffcanvas;
 
+// node_modules/react-bootstrap/esm/NavbarText.js
+var React16 = __toESM(require_react());
+var import_classnames10 = __toESM(require_classnames());
+var import_jsx_runtime20 = __toESM(require_jsx_runtime());
+var NavbarText = React16.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = "span",
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, "navbar-text");
+  return (0, import_jsx_runtime20.jsx)(Component, {
+    ref,
+    className: (0, import_classnames10.default)(className, bsPrefix),
+    ...props
+  });
+});
+NavbarText.displayName = "NavbarText";
+var NavbarText_default = NavbarText;
+
 // node_modules/react-bootstrap/esm/Navbar.js
 var import_jsx_runtime21 = __toESM(require_jsx_runtime());
-var NavbarText = createWithBsPrefix("navbar-text", {
-  Component: "span"
-});
-var Navbar = React19.forwardRef((props, ref) => {
+var Navbar = React17.forwardRef((props, ref) => {
   const {
     bsPrefix: initialBsPrefix,
     expand = true,
@@ -1968,7 +1271,7 @@ var Navbar = React19.forwardRef((props, ref) => {
     expanded: "onToggle"
   });
   const bsPrefix = useBootstrapPrefix(initialBsPrefix, "navbar");
-  const handleCollapse = (0, import_react19.useCallback)((...args) => {
+  const handleCollapse = (0, import_react13.useCallback)((...args) => {
     onSelect == null ? void 0 : onSelect(...args);
     if (collapseOnSelect && expanded) {
       onToggle == null ? void 0 : onToggle(false);
@@ -1980,7 +1283,7 @@ var Navbar = React19.forwardRef((props, ref) => {
   let expandClass = `${bsPrefix}-expand`;
   if (typeof expand === "string")
     expandClass = `${expandClass}-${expand}`;
-  const navbarContext = (0, import_react19.useMemo)(() => ({
+  const navbarContext = (0, import_react13.useMemo)(() => ({
     onToggle: () => onToggle == null ? void 0 : onToggle(!expanded),
     bsPrefix,
     expanded: !!expanded,
@@ -1993,7 +1296,7 @@ var Navbar = React19.forwardRef((props, ref) => {
       children: (0, import_jsx_runtime21.jsx)(Component, {
         ref,
         ...controlledProps,
-        className: (0, import_classnames10.default)(className, bsPrefix, expand && expandClass, variant && `${bsPrefix}-${variant}`, bg && `bg-${bg}`, sticky && `sticky-${sticky}`, fixed && `fixed-${fixed}`)
+        className: (0, import_classnames11.default)(className, bsPrefix, expand && expandClass, variant && `${bsPrefix}-${variant}`, bg && `bg-${bg}`, sticky && `sticky-${sticky}`, fixed && `fixed-${fixed}`)
       })
     })
   });
@@ -2003,7 +1306,7 @@ var Navbar_default = Object.assign(Navbar, {
   Brand: NavbarBrand_default,
   Collapse: NavbarCollapse_default,
   Offcanvas: NavbarOffcanvas_default,
-  Text: NavbarText,
+  Text: NavbarText_default,
   Toggle: NavbarToggle_default
 });
 export {

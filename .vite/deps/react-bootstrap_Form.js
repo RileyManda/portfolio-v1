@@ -1,32 +1,36 @@
 import {
+  hasChildOfType
+} from "./chunk-CSZDRM5H.js";
+import {
+  Col_default
+} from "./chunk-FELXFAL5.js";
+import {
   require_warning
-} from "./chunk-7T6WH3EZ.js";
+} from "./chunk-K4O3PCAO.js";
 import {
   require_prop_types
-} from "./chunk-QBOERDGK.js";
-import {
-  createWithBsPrefix
-} from "./chunk-26J5V33X.js";
+} from "./chunk-MR7JJJBB.js";
+import "./chunk-HOFZDJTO.js";
 import {
   require_classnames,
   require_jsx_runtime,
-  useBootstrapBreakpoints,
-  useBootstrapMinBreakpoint,
   useBootstrapPrefix
-} from "./chunk-WTMQV53C.js";
+} from "./chunk-6RDS3TTM.js";
 import {
-  __toESM,
   require_react
-} from "./chunk-L7APZED3.js";
+} from "./chunk-67XTWVEJ.js";
+import {
+  __toESM
+} from "./chunk-5WWUZCGV.js";
 
 // node_modules/react-bootstrap/esm/Form.js
 var import_classnames12 = __toESM(require_classnames());
 var import_prop_types2 = __toESM(require_prop_types());
-var React16 = __toESM(require_react());
+var React15 = __toESM(require_react());
 
 // node_modules/react-bootstrap/esm/FormCheck.js
 var import_classnames4 = __toESM(require_classnames());
-var React6 = __toESM(require_react());
+var React5 = __toESM(require_react());
 var import_react3 = __toESM(require_react());
 
 // node_modules/react-bootstrap/esm/Feedback.js
@@ -126,17 +130,11 @@ var FormCheckLabel = React4.forwardRef(({
 FormCheckLabel.displayName = "FormCheckLabel";
 var FormCheckLabel_default = FormCheckLabel;
 
-// node_modules/react-bootstrap/esm/ElementChildren.js
-var React5 = __toESM(require_react());
-function hasChildOfType(children, type) {
-  return React5.Children.toArray(children).some((child) => React5.isValidElement(child) && child.type === type);
-}
-
 // node_modules/react-bootstrap/esm/FormCheck.js
 var import_jsx_runtime4 = __toESM(require_jsx_runtime());
 var import_jsx_runtime5 = __toESM(require_jsx_runtime());
 var import_jsx_runtime6 = __toESM(require_jsx_runtime());
-var FormCheck = React6.forwardRef(({
+var FormCheck = React5.forwardRef(({
   id,
   bsPrefix,
   bsSwitchPrefix,
@@ -202,11 +200,11 @@ var FormCheck_default = Object.assign(FormCheck, {
 
 // node_modules/react-bootstrap/esm/FormControl.js
 var import_classnames5 = __toESM(require_classnames());
-var React7 = __toESM(require_react());
+var React6 = __toESM(require_react());
 var import_react4 = __toESM(require_react());
 var import_warning = __toESM(require_warning());
 var import_jsx_runtime7 = __toESM(require_jsx_runtime());
-var FormControl = React7.forwardRef(({
+var FormControl = React6.forwardRef(({
   bsPrefix,
   type,
   size,
@@ -225,17 +223,6 @@ var FormControl = React7.forwardRef(({
     controlId
   } = (0, import_react4.useContext)(FormContext_default);
   bsPrefix = useBootstrapPrefix(bsPrefix, "form-control");
-  let classes;
-  if (plaintext) {
-    classes = {
-      [`${bsPrefix}-plaintext`]: true
-    };
-  } else {
-    classes = {
-      [bsPrefix]: true,
-      [`${bsPrefix}-${size}`]: size
-    };
-  }
   true ? (0, import_warning.default)(controlId == null || !id, "`controlId` is ignored on `<FormControl>` when `id` is specified.") : void 0;
   return (0, import_jsx_runtime7.jsx)(Component, {
     ...props,
@@ -244,7 +231,7 @@ var FormControl = React7.forwardRef(({
     ref,
     readOnly,
     id: id || controlId,
-    className: (0, import_classnames5.default)(className, classes, isValid && `is-valid`, isInvalid && `is-invalid`, type === "color" && `${bsPrefix}-color`)
+    className: (0, import_classnames5.default)(className, plaintext ? `${bsPrefix}-plaintext` : bsPrefix, size && `${bsPrefix}-${size}`, type === "color" && `${bsPrefix}-color`, isValid && "is-valid", isInvalid && "is-invalid")
   });
 });
 FormControl.displayName = "FormControl";
@@ -253,12 +240,29 @@ var FormControl_default = Object.assign(FormControl, {
 });
 
 // node_modules/react-bootstrap/esm/FormFloating.js
-var FormFloating_default = createWithBsPrefix("form-floating");
+var React7 = __toESM(require_react());
+var import_classnames6 = __toESM(require_classnames());
+var import_jsx_runtime8 = __toESM(require_jsx_runtime());
+var FormFloating = React7.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = "div",
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, "form-floating");
+  return (0, import_jsx_runtime8.jsx)(Component, {
+    ref,
+    className: (0, import_classnames6.default)(className, bsPrefix),
+    ...props
+  });
+});
+FormFloating.displayName = "FormFloating";
+var FormFloating_default = FormFloating;
 
 // node_modules/react-bootstrap/esm/FormGroup.js
 var React8 = __toESM(require_react());
 var import_react5 = __toESM(require_react());
-var import_jsx_runtime8 = __toESM(require_jsx_runtime());
+var import_jsx_runtime9 = __toESM(require_jsx_runtime());
 var FormGroup = React8.forwardRef(({
   controlId,
   // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
@@ -268,9 +272,9 @@ var FormGroup = React8.forwardRef(({
   const context = (0, import_react5.useMemo)(() => ({
     controlId
   }), [controlId]);
-  return (0, import_jsx_runtime8.jsx)(FormContext_default.Provider, {
+  return (0, import_jsx_runtime9.jsx)(FormContext_default.Provider, {
     value: context,
-    children: (0, import_jsx_runtime8.jsx)(Component, {
+    children: (0, import_jsx_runtime9.jsx)(Component, {
       ...props,
       ref
     })
@@ -281,81 +285,11 @@ var FormGroup_default = FormGroup;
 
 // node_modules/react-bootstrap/esm/FormLabel.js
 var import_classnames7 = __toESM(require_classnames());
-var React10 = __toESM(require_react());
+var React9 = __toESM(require_react());
 var import_react6 = __toESM(require_react());
 var import_warning2 = __toESM(require_warning());
-
-// node_modules/react-bootstrap/esm/Col.js
-var import_classnames6 = __toESM(require_classnames());
-var React9 = __toESM(require_react());
-var import_jsx_runtime9 = __toESM(require_jsx_runtime());
-function useCol({
-  as,
-  bsPrefix,
-  className,
-  ...props
-}) {
-  bsPrefix = useBootstrapPrefix(bsPrefix, "col");
-  const breakpoints = useBootstrapBreakpoints();
-  const minBreakpoint = useBootstrapMinBreakpoint();
-  const spans = [];
-  const classes = [];
-  breakpoints.forEach((brkPoint) => {
-    const propValue = props[brkPoint];
-    delete props[brkPoint];
-    let span;
-    let offset;
-    let order;
-    if (typeof propValue === "object" && propValue != null) {
-      ({
-        span,
-        offset,
-        order
-      } = propValue);
-    } else {
-      span = propValue;
-    }
-    const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
-    if (span)
-      spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
-    if (order != null)
-      classes.push(`order${infix}-${order}`);
-    if (offset != null)
-      classes.push(`offset${infix}-${offset}`);
-  });
-  return [{
-    ...props,
-    className: (0, import_classnames6.default)(className, ...spans, ...classes)
-  }, {
-    as,
-    bsPrefix,
-    spans
-  }];
-}
-var Col = React9.forwardRef(
-  // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-  (props, ref) => {
-    const [{
-      className,
-      ...colProps
-    }, {
-      as: Component = "div",
-      bsPrefix,
-      spans
-    }] = useCol(props);
-    return (0, import_jsx_runtime9.jsx)(Component, {
-      ...colProps,
-      ref,
-      className: (0, import_classnames6.default)(className, !spans.length && bsPrefix)
-    });
-  }
-);
-Col.displayName = "Col";
-var Col_default = Col;
-
-// node_modules/react-bootstrap/esm/FormLabel.js
 var import_jsx_runtime10 = __toESM(require_jsx_runtime());
-var FormLabel = React10.forwardRef(({
+var FormLabel = React9.forwardRef(({
   // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
   as: Component = "label",
   bsPrefix,
@@ -398,10 +332,10 @@ var FormLabel_default = FormLabel;
 
 // node_modules/react-bootstrap/esm/FormRange.js
 var import_classnames8 = __toESM(require_classnames());
-var React11 = __toESM(require_react());
+var React10 = __toESM(require_react());
 var import_react7 = __toESM(require_react());
 var import_jsx_runtime11 = __toESM(require_jsx_runtime());
-var FormRange = React11.forwardRef(({
+var FormRange = React10.forwardRef(({
   bsPrefix,
   className,
   id,
@@ -424,10 +358,10 @@ var FormRange_default = FormRange;
 
 // node_modules/react-bootstrap/esm/FormSelect.js
 var import_classnames9 = __toESM(require_classnames());
-var React12 = __toESM(require_react());
+var React11 = __toESM(require_react());
 var import_react8 = __toESM(require_react());
 var import_jsx_runtime12 = __toESM(require_jsx_runtime());
-var FormSelect = React12.forwardRef(({
+var FormSelect = React11.forwardRef(({
   bsPrefix,
   size,
   htmlSize,
@@ -454,9 +388,9 @@ var FormSelect_default = FormSelect;
 
 // node_modules/react-bootstrap/esm/FormText.js
 var import_classnames10 = __toESM(require_classnames());
-var React13 = __toESM(require_react());
+var React12 = __toESM(require_react());
 var import_jsx_runtime13 = __toESM(require_jsx_runtime());
-var FormText = React13.forwardRef(
+var FormText = React12.forwardRef(
   // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
   ({
     bsPrefix,
@@ -477,9 +411,9 @@ FormText.displayName = "FormText";
 var FormText_default = FormText;
 
 // node_modules/react-bootstrap/esm/Switch.js
-var React14 = __toESM(require_react());
+var React13 = __toESM(require_react());
 var import_jsx_runtime14 = __toESM(require_jsx_runtime());
-var Switch = React14.forwardRef((props, ref) => (0, import_jsx_runtime14.jsx)(FormCheck_default, {
+var Switch = React13.forwardRef((props, ref) => (0, import_jsx_runtime14.jsx)(FormCheck_default, {
   ...props,
   ref,
   type: "switch"
@@ -492,10 +426,10 @@ var Switch_default = Object.assign(Switch, {
 
 // node_modules/react-bootstrap/esm/FloatingLabel.js
 var import_classnames11 = __toESM(require_classnames());
-var React15 = __toESM(require_react());
+var React14 = __toESM(require_react());
 var import_jsx_runtime15 = __toESM(require_jsx_runtime());
 var import_jsx_runtime16 = __toESM(require_jsx_runtime());
-var FloatingLabel = React15.forwardRef(({
+var FloatingLabel = React14.forwardRef(({
   bsPrefix,
   className,
   children,
@@ -537,7 +471,7 @@ var propTypes2 = {
   validated: import_prop_types2.default.bool,
   as: import_prop_types2.default.elementType
 };
-var Form = React16.forwardRef(({
+var Form = React15.forwardRef(({
   className,
   validated,
   // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595

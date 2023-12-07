@@ -1,9 +1,11 @@
+"use client";
 import {
   Button_default
-} from "./chunk-NG4ZEJXX.js";
-import "./chunk-GAJTIN5J.js";
-import "./chunk-WTMQV53C.js";
-import "./chunk-L7APZED3.js";
+} from "./chunk-EG7XEKY7.js";
+import "./chunk-QSM64XOG.js";
+import "./chunk-6RDS3TTM.js";
+import "./chunk-67XTWVEJ.js";
+import "./chunk-5WWUZCGV.js";
 export {
   Button_default as default
 };

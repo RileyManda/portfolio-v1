@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
-import { useMemo } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchProjects } from '../redux/projects/projectSlice';
+import { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
-import AppLogo from '../assets/app-logo.svg';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -14,25 +11,29 @@ import SearchField from './SearchField';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
+import ProjectData from '../api/projectData.json';
 
 const Projects = ({ setSearchKeyword, searchKeyword }) => {
-  const projects = useSelector(state => state.home.projects);
-  const isLoading = useSelector(state => state.home.isLoading);
-  const dispatch = useDispatch();
+  // projects local state
+  const [isLoading, setIsLoading] = useState(false);
+  const [projects] = useState(ProjectData);
 
-  useMemo(() => {
-    dispatch(fetchProjects());
-  }, [dispatch]);
+  const fetchProjects = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  };
 
-  if (isLoading) {
-    return <div><Loader /></div>;
-  }
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
-  const projectsWithTopics = projects.filter(project =>
-    project.topics && project.topics.length > 0 && project.name.toLowerCase().includes(searchKeyword.toLowerCase()));
-
-  // Sort projects by updated_at in descending order
-  projectsWithTopics.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+  const projectsWithTopics = projects
+    .filter(project =>
+      project.topics && project.topics.length > 0 && project.name.toLowerCase().includes(searchKeyword.toLowerCase())
+    )
+    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
   const formatDate = (date) => {
     return format(new Date(date), 'MMM yyyy');
@@ -60,12 +61,13 @@ const Projects = ({ setSearchKeyword, searchKeyword }) => {
         </Navbar>
 
         <Stack gap={3}>
+          {isLoading && <Loader />}
           <Row xs="auto" md="auto" className="justify-content-center">
             {projectsWithTopics.map((project, index) => (
               <Col key={index} xs="auto">
                 <ProjectCard
+                  image={project.image}
                   created={formatDate(project.created_at)}
-                  applogo={AppLogo}
                   title={project.name}
                   description={project.description || 'Project Description'}
                   demo={project.homepage}

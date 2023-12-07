@@ -1,34 +1,43 @@
+"use client";
+import {
+  CardHeaderContext_default
+} from "./chunk-5VUHVV23.js";
 import {
   NavContext_default,
   NavItem_default,
   NavLink_default,
   TabContext_default,
   useForceUpdate
-} from "./chunk-ZJCBPGVL.js";
-import "./chunk-GAJTIN5J.js";
+} from "./chunk-GBOYDZHD.js";
+import "./chunk-WGR7OFB3.js";
+import "./chunk-QSM64XOG.js";
 import {
   NavbarContext_default,
   SelectableContext_default,
   dataAttr,
   dataProp,
   makeEventKey,
-  qsa,
+  qsa
+} from "./chunk-RKDBJ4KQ.js";
+import "./chunk-XJGEB5JV.js";
+import {
   useMergedRefs_default,
   useUncontrolled
-} from "./chunk-GLQYW5T6.js";
-import {
-  createWithBsPrefix
-} from "./chunk-26J5V33X.js";
+} from "./chunk-2KBU7WA5.js";
+import "./chunk-KM5JISHU.js";
+import "./chunk-T4MTQRGO.js";
 import {
   require_classnames,
   require_jsx_runtime,
   useBootstrapPrefix
-} from "./chunk-WTMQV53C.js";
+} from "./chunk-6RDS3TTM.js";
+import {
+  require_react
+} from "./chunk-67XTWVEJ.js";
 import {
   __commonJS,
-  __toESM,
-  require_react
-} from "./chunk-L7APZED3.js";
+  __toESM
+} from "./chunk-5WWUZCGV.js";
 
 // node_modules/prop-types-extra/lib/utils/createChainableTypeChecker.js
 var require_createChainableTypeChecker = __commonJS({
@@ -101,7 +110,7 @@ var require_all = __commonJS({
 });
 
 // node_modules/react-bootstrap/esm/Nav.js
-var import_classnames = __toESM(require_classnames());
+var import_classnames2 = __toESM(require_classnames());
 var import_all = __toESM(require_all());
 var React3 = __toESM(require_react());
 var import_react2 = __toESM(require_react());
@@ -229,17 +238,28 @@ var Nav_default = Object.assign(Nav, {
   Item: NavItem_default
 });
 
-// node_modules/react-bootstrap/esm/CardHeaderContext.js
-var React2 = __toESM(require_react());
-var context = React2.createContext(null);
-context.displayName = "CardHeaderContext";
-var CardHeaderContext_default = context;
-
 // node_modules/react-bootstrap/esm/NavItem.js
-var NavItem_default2 = createWithBsPrefix("nav-item");
+var React2 = __toESM(require_react());
+var import_classnames = __toESM(require_classnames());
+var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+var NavItem = React2.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = "div",
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, "nav-item");
+  return (0, import_jsx_runtime2.jsx)(Component, {
+    ref,
+    className: (0, import_classnames.default)(className, bsPrefix),
+    ...props
+  });
+});
+NavItem.displayName = "NavItem";
+var NavItem_default2 = NavItem;
 
 // node_modules/react-bootstrap/esm/Nav.js
-var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+var import_jsx_runtime3 = __toESM(require_jsx_runtime());
 var Nav2 = React3.forwardRef((uncontrolledProps, ref) => {
   const {
     as = "div",
@@ -269,11 +289,11 @@ var Nav2 = React3.forwardRef((uncontrolledProps, ref) => {
       cardHeaderBsPrefix
     } = cardHeaderContext);
   }
-  return (0, import_jsx_runtime2.jsx)(Nav_default, {
+  return (0, import_jsx_runtime3.jsx)(Nav_default, {
     as,
     ref,
     activeKey,
-    className: (0, import_classnames.default)(className, {
+    className: (0, import_classnames2.default)(className, {
       [bsPrefix]: !isNavbar,
       [`${navbarBsPrefix}-nav`]: isNavbar,
       [`${navbarBsPrefix}-nav-scroll`]: isNavbar && navbarScroll,
