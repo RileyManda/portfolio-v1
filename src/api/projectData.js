@@ -70,17 +70,17 @@ const projects = [
     "description": "Cixhub's official website, built with react and nextjs with themeui and styled components.",
     "homepage": "https://cixhub.netlify.app/",
     "html_url": "https://github.com/RileyManda/cixhub",
-    "topics": ["react", "vite3", "react-router", "react-bootstrap", "reactjs-components", "githubapi", "react-jest", "prop-types", "react-testing-library"],
+      "topics": ["reactjs","styled-components","theme - ui","nextjs13"],
     "image": CixhubImage,
     "created_at": "2023-01-01T12:00:00Z",
     "updated_at": "2023-01-05T15:30:00Z"
   },
   {
-    "name": "EventHrabor",
+    "name": "EventHarbor",
     "description": "Currently building Event Harbor, a Rails web application that allows users to add, update, and delete events.The application is a work in progress and is built using Ruby on Rails and PostgreSQL as the database,TailwindUI and Tailwindcss for styling, and Rspec for testing.",
     "homepage": "https://github.com/RileyManda/event-harbor",
     "html_url": "https://github.com/RileyManda/event-harbor",
-    "topics": ["react", "vite3", "react-router", "react-bootstrap", "reactjs-components", "githubapi", "react-jest", "prop-types", "react-testing-library"],
+    "topics": ["rails","devise","cancancan","ruby","tailwind - css"],
     "image": EventHarborImage,
     "created_at": "2023-01-01T12:00:00Z",
     "updated_at": "2023-01-05T15:30:00Z"
