@@ -68,12 +68,13 @@ const projects = [
     {
     "name": "CixHub Website",
     "description": "Cixhub's official website, built with react and nextjs with themeui and styled components.",
-    "homepage": " ",
-    "html_url": "https://cixhub.netlify.app/",
+    "homepage": "https://cixhub.netlify.app/",
+    "html_url": "https://github.com/RileyManda/cixhub",
     "topics": ["react", "vite3", "react-router", "react-bootstrap", "reactjs-components", "githubapi", "react-jest", "prop-types", "react-testing-library"],
     "image": CixhubImage,
     "created_at": "2023-01-01T12:00:00Z",
     "updated_at": "2023-01-05T15:30:00Z"
-  },
+  }
+
 ];
 export default projects;
