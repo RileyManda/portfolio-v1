@@ -3,6 +3,7 @@ import PortfolioImage from '../assets/project-images/portfolio.png'
 import CoincraftImage from '../assets/project-images/coincraft-home.png'
 import CixhubImage from '../assets/project-images/cixhub.png'
 import JetLogixSchema from '../assets/project-images/jetlogix-db-schema.png'
+import EventHarborImage from '../assets/project-images/eventharbor.webp'
 const projects = [
   {
     "name": "JetLogix-frontend",
@@ -64,7 +65,6 @@ const projects = [
     "created_at": "2023-02-01T10:30:00Z",
     "updated_at": "2023-02-10T18:45:00Z"
   },
-
     {
     "name": "CixHub Website",
     "description": "Cixhub's official website, built with react and nextjs with themeui and styled components.",
@@ -72,6 +72,16 @@ const projects = [
     "html_url": "https://github.com/RileyManda/cixhub",
     "topics": ["react", "vite3", "react-router", "react-bootstrap", "reactjs-components", "githubapi", "react-jest", "prop-types", "react-testing-library"],
     "image": CixhubImage,
+    "created_at": "2023-01-01T12:00:00Z",
+    "updated_at": "2023-01-05T15:30:00Z"
+  },
+  {
+    "name": "EventHrabor",
+    "description": "Currently building Event Harbor, a Rails web application that allows users to add, update, and delete events.The application is a work in progress and is built using Ruby on Rails and PostgreSQL as the database,TailwindUI and Tailwindcss for styling, and Rspec for testing.",
+    "homepage": "https://github.com/RileyManda/event-harbor",
+    "html_url": "https://github.com/RileyManda/event-harbor",
+    "topics": ["react", "vite3", "react-router", "react-bootstrap", "reactjs-components", "githubapi", "react-jest", "prop-types", "react-testing-library"],
+    "image": EventHarborImage,
     "created_at": "2023-01-01T12:00:00Z",
     "updated_at": "2023-01-05T15:30:00Z"
   }
