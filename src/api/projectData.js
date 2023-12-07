@@ -19,8 +19,8 @@ const projects = [
       "Redux-toolkit"
     ],
     "image": jetlogixImage,
-    "created_at": "2023-01-01T12:00:00Z",
-    "updated_at": "2023-01-05T15:30:00Z"
+    "created_at": "2023-11-01T12:00:00Z",
+    "updated_at": "2023-11-05T15:30:00Z"
   },
   {
     "name": "JetLogix-API",
@@ -34,8 +34,8 @@ const projects = [
          "devise"
     ],
     "image": JetLogixSchema,
-    "created_at": "2023-01-01T12:00:00Z",
-    "updated_at": "2023-01-05T15:30:00Z"
+    "created_at": "2023-11-01T12:00:00Z",
+    "updated_at": "2023-11-05T15:30:00Z"
   },
   {
     "name": "Portfolio",
@@ -44,8 +44,8 @@ const projects = [
     "html_url": "https://github.com/RileyManda/rileysportfolio",
     "topics": ["react","vite3","react-router","react-bootstrap","reactjs-components","githubapi","react-jest","prop-types","react-testing-library"],
     "image": PortfolioImage,
-    "created_at": "2023-01-01T12:00:00Z",
-    "updated_at": "2023-01-05T15:30:00Z"
+    "created_at": "2023-09-01T12:00:00Z",
+    "updated_at": "2023-09-05T15:30:00Z"
   },
   {
     "name": "CoinCraft",
@@ -62,28 +62,28 @@ const projects = [
       "cancancan"
     ],
     "image": CoincraftImage,
-    "created_at": "2023-02-01T10:30:00Z",
-    "updated_at": "2023-02-10T18:45:00Z"
+    "created_at": "2023-10-01T10:30:00Z",
+    "updated_at": "2023-10-10T18:45:00Z"
   },
     {
     "name": "CixHub Website",
     "description": "Cixhub's official website, built with react and nextjs with themeui and styled components.",
     "homepage": "https://cixhub.netlify.app/",
     "html_url": "https://github.com/RileyManda/cixhub",
-    "topics": ["react", "vite3", "react-router", "react-bootstrap", "reactjs-components", "githubapi", "react-jest", "prop-types", "react-testing-library"],
+      "topics": ["reactjs","styled-components","theme - ui","nextjs13"],
     "image": CixhubImage,
-    "created_at": "2023-01-01T12:00:00Z",
-    "updated_at": "2023-01-05T15:30:00Z"
+    "created_at": "2022-12-01T12:00:00Z",
+    "updated_at": "2022-12-05T15:30:00Z"
   },
   {
-    "name": "EventHrabor",
+    "name": "EventHarbor",
     "description": "Currently building Event Harbor, a Rails web application that allows users to add, update, and delete events.The application is a work in progress and is built using Ruby on Rails and PostgreSQL as the database,TailwindUI and Tailwindcss for styling, and Rspec for testing.",
     "homepage": "https://github.com/RileyManda/event-harbor",
     "html_url": "https://github.com/RileyManda/event-harbor",
-    "topics": ["react", "vite3", "react-router", "react-bootstrap", "reactjs-components", "githubapi", "react-jest", "prop-types", "react-testing-library"],
+    "topics": ["rails","devise","cancancan","ruby","tailwind - css"],
     "image": EventHarborImage,
-    "created_at": "2023-01-01T12:00:00Z",
-    "updated_at": "2023-01-05T15:30:00Z"
+    "created_at": "2023-12-01T12:00:00Z",
+    "updated_at": "2023-12-05T15:30:00Z"
   }
 
 ];
