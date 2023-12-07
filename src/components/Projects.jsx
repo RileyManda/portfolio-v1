@@ -7,13 +7,9 @@ import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 import Loader from './Loader';
 import { format } from 'date-fns';
-import SearchField from './SearchField';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Navbar from 'react-bootstrap/Navbar';
 import ProjectData from '../api/projectData';
 
-const Projects = ({ setSearchKeyword, searchKeyword }) => {
+const Projects = () => {
   // projects local state
   const [isLoading, setIsLoading] = useState(false);
   const [projects] = useState(ProjectData);
@@ -31,8 +27,8 @@ const Projects = ({ setSearchKeyword, searchKeyword }) => {
 
   const projectsWithTopics = projects
     .filter(project =>
-      project.topics && project.topics.length > 0 && project.name.toLowerCase().includes(searchKeyword.toLowerCase())
-    )
+      project.topics && project.topics.length > 0 && project.name.toLowerCase())
+
     .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
   const formatDate = (date) => {
@@ -45,21 +41,6 @@ const Projects = ({ setSearchKeyword, searchKeyword }) => {
         <div className="section-title">
           <h2>Projects</h2>
         </div>
-
-        <Navbar expand="lg" sticky="top" variant="dark" className="search-bar">
-          <Nav>
-            <NavDropdown title="Filter by:" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#react">React</NavDropdown.Item>
-              <NavDropdown.Item href="#redux">Redux-toolkit</NavDropdown.Item>
-              <NavDropdown.Item href="#js">Javascript</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#fs">Full-stack</NavDropdown.Item>
-              <NavDropdown.Item href="#rr">Ruby|Rails</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <SearchField setSearchKeyword={setSearchKeyword} />
-        </Navbar>
-
         <Stack gap={3}>
           {isLoading && <Loader />}
           <Row xs="auto" md="auto" className="justify-content-center">
