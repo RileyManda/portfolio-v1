@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
-import AppLogo from '../assets/app-logo.svg';
+import AppLogo from '../assets/project-images/jetlogix.png';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -62,13 +62,13 @@ const Projects = ({ setSearchKeyword, searchKeyword }) => {
         </Navbar>
 
         <Stack gap={3}>
-          {isLoading && <Loader />} {/* Display loader only when isLoading is true */}
+          {isLoading && <Loader />}
           <Row xs="auto" md="auto" className="justify-content-center">
             {projectsWithTopics.map((project, index) => (
               <Col key={index} xs="auto">
                 <ProjectCard
                   created={formatDate(project.created_at)}
-                  applogo={AppLogo}
+                  projectImage={AppLogo}
                   title={project.name}
                   description={project.description || 'Project Description'}
                   demo={project.homepage}

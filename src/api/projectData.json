@@ -1,7 +1,28 @@
 [
   {
-    "name": "Project 1",
-    "description": "Description for Project 1",
+    "name": "JetLogix",
+    "description": "Contributed to the successful development of JetLogix's Private Jet Reservation Application, by implementing the Add Aeroplane, Aeroplane Specs, and Reserve aeroplane components utilizing  React for the front-end and Ruby on Rails for the backend with implementations of TDD and BDD tests with Rspec and react testing library.The application API is built with Ruby on Rails and utilizes PostgreSQL database",
+    "homepage": "https://jetlogix.onrender.com/",
+    "html_url": "https://github.com/rubydevi/jetlogix-frontend",
+    "topics": [
+      "react",
+      "RubyOnRails",
+      "api authentication",
+      "postgresql",
+      "devise",
+      "react-testing-library",
+      "bootstrap5",
+      "redux-toolkit",
+      "react-styled-component",
+      "Redux-toolkit"
+    ],
+    "project_image": "src/assets/project-images/jetlogix.png",
+    "created_at": "2023-01-01T12:00:00Z",
+    "updated_at": "2023-01-05T15:30:00Z"
+  },
+  {
+    "name": "JetLogix(Front-end)",
+    "description": "JetLogix's front end is a React application that fetches and displays aeroplanes and reservation information from the JetLogix back-end via API endpoints, ensuring a seamless user interface for private jet reservations.",
     "homepage": "https://",
     "html_url": "https://github.com/project1",
     "topics": ["React", "Redux-toolkit"],

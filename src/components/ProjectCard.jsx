@@ -9,7 +9,7 @@ import Stack from 'react-bootstrap/Stack';
 
 const techColors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark'];
 
-const ProjectCard = ({ applogo, title, description, demo, github, techarray, created, updated }) => {
+const ProjectCard = ({ projectImage, title, description, demo, github, techarray, created, updated }) => {
     const [isAccordionOpen, setIsAccordionOpen] = useState(false);
     const handleDemoClick = () => {
         window.open(demo, '_blank');
@@ -25,13 +25,13 @@ const ProjectCard = ({ applogo, title, description, demo, github, techarray, cre
     };
     return (
         <div>
-            <Card className="project-card" style={{ width: '20rem', marginBottom: '3rem', height: isAccordionOpen ? 'auto' : '550px' }}
+            <Card className="project-card" style={{ width: '23rem', marginBottom: '3rem', height: isAccordionOpen ? 'auto' : '550px' }}
                 border="dark">
                 <div className="screw top-left" />
                 <div className="screw top-right" />
                 <div className="screw bottom-left" />
                 <div className="screw bottom-right" />
-                <Card.Img variant="top" src={applogo} />
+                <Card.Img variant="top" src={projectImage} style={{ height: '250px' }} />
                 <Card.ImgOverlay style={{ height: '250px' }}>
                     <Badge bg="dark" style={{ opacity: '0.8' }}><Card.Title style={{ fontSize: '18px' }}>{title}</Card.Title></Badge>
                 </Card.ImgOverlay>
@@ -73,7 +73,7 @@ const ProjectCard = ({ applogo, title, description, demo, github, techarray, cre
     );
 };
 ProjectCard.propTypes = {
-    applogo: PropTypes.string.isRequired,
+    projectImage: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     demo: PropTypes.string.isRequired,
