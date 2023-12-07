@@ -1,12 +1,15 @@
+"use client";
 import {
   require_classnames,
   require_jsx_runtime,
   useBootstrapPrefix
-} from "./chunk-WTMQV53C.js";
+} from "./chunk-6RDS3TTM.js";
 import {
-  __toESM,
   require_react
-} from "./chunk-L7APZED3.js";
+} from "./chunk-67XTWVEJ.js";
+import {
+  __toESM
+} from "./chunk-5WWUZCGV.js";
 
 // node_modules/react-bootstrap/esm/Container.js
 var import_classnames = __toESM(require_classnames());

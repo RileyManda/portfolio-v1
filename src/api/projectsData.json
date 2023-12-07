@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Project 1",
+    "description": "Description for Project 1",
+    "homepage": "https://",
+    "html_url": "https://github.com/project1",
+    "topics": ["React", "Redux-toolkit"],
+    "project_image": "src/images/",
+    "created_at": "2023-01-01T12:00:00Z",
+    "updated_at": "2023-01-05T15:30:00Z"
+  },
+  {
+    "name": "Project 2",
+    "description": "Description for Project 2",
+    "homepage": "https://",
+    "html_url": "https://github.com/project2",
+    "topics": ["Javascript", "Full-stack"],
+    "project_image": "src/images/",
+    "created_at": "2023-02-01T10:30:00Z",
+    "updated_at": "2023-02-10T18:45:00Z"
+  }
+]
