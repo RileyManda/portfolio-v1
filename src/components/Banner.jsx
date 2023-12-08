@@ -12,6 +12,7 @@ import { ProgrammingIcons, FrontendIcons, BackendIcons, EditorIcons } from './Ic
 import { orangeIconStyles, blueIconStyles, purpleIconStyles, redIconStyles } from './IconColor';
 import introductionData from './IntroductionData';
 import AnimData from './AnimData';
+import SocialMediaButtons from './SocialMedia';
 
 const Banner = () => {
   const dispatch = useDispatch();
@@ -20,10 +21,6 @@ const Banner = () => {
   useMemo(() => {
     dispatch(fetchProjects());
   }, [dispatch]);
-
-  // const handleSlide = (selectedIndex) => {
-  //   setCurrentAnimData(selectedIndex);
-  // };
 
   const handleArrowClick = () => {
     const projectsSection = document.getElementById('projects');
@@ -36,6 +33,7 @@ const Banner = () => {
   return (
     <div className="banner-container">
       <Container fluid>
+        <SocialMediaButtons />
         <div className="banner-content">
           {introductionData.map((project, index) => (
             <div key={index} className="banner-item">

@@ -16,7 +16,7 @@ function App() {
   const contactRef = useRef(null);
 
   return (
-    <div>
+    <main>
       <BrowserRouter>
         <Header homeRef={homeRef} projectsRef={projectsRef} experienceRef={experienceRef} contactRef={contactRef} />
         <div className="content-container">
@@ -36,7 +36,7 @@ function App() {
           </div>
         </div>
       </BrowserRouter>
-    </div>
+    </main>
   );
 }
 
