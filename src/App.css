@@ -51,6 +51,20 @@
   color: var(--nav-link-active);
 }
 
+.greeting {
+  font-size: 100px;
+  color: #090808;
+}
+
+.intro {
+  color: #090808;
+}
+
+.whatimdoing {
+  font-size: 18px;
+  color: #090808;
+}
+
 .content-container {
   align-items: center;
 }
@@ -69,7 +83,7 @@
 
 .banner-container {
   height: 90vh;
-  margin-top: 0;
+  margin-top: 10%;
   width: 100%;
 }
 
@@ -85,7 +99,7 @@
 }
 
 .anim-layout {
-  margin-top: -20px;
+  margin-top: -50%;
   align-items: center;
 }
 

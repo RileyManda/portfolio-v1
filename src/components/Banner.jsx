@@ -31,7 +31,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="banner-container">
+    <div className="banner-container d-flex align-items-center justify-content-center">
       <Container fluid>
         <SocialMediaButtons />
         <div className="banner-content">
@@ -40,9 +40,9 @@ const Banner = () => {
               <Row className="align-items-center text-center">
                 <Col sm={12} lg={6} className="carousel-item-content d-flex justify-content-center">
                   <Stack gap={3} direction="vertical" className='stack-layout'>
-                    <h1>{project.title}</h1>
-                    <p>{project.description}</p>
-                    <p>{project.whatimadoing}</p>
+                    <h1 className="greeting">{project.title}</h1>
+                    <p className="intro">{project.description}</p>
+                    <p className="whatimdoing">{project.whatimadoing}</p>
                     <Stack direction="horizontal" gap={3}>
                       <Badge pill bg="dark">Front-end</Badge>
                       {FrontendIcons.map((icon, index) => (
