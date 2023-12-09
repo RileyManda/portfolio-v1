@@ -1,8 +1,9 @@
 import { FaTwitter, FaLinkedin, FaGithub, FaStackOverflow, FaMedium } from 'react-icons/fa';
+import { MdEmail } from "react-icons/md";
 
 const SocialMediaButtons = () => {
     return (
-        <div className="social-media-buttons">
+        <div className="social-media-buttons social-anim">
             <a href="https://www.linkedin.com/in/rileymanda/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin style={{ width: '50px', height: '50px' }} />
             </a>
@@ -18,8 +19,9 @@ const SocialMediaButtons = () => {
             <a href="https://twitter.com/rileycodez" target="_blank" rel="noopener noreferrer">
                 <FaTwitter style={{  width: '50px', height: '50px' }} />
             </a>
-
-
+            <a href="https://twitter.com/rileycodez" target="_blank" rel="noopener noreferrer">
+                <MdEmail style={{ width: '50px', height: '50px' }} />
+            </a>
         </div>
     );
 };
