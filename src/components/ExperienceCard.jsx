@@ -6,10 +6,11 @@ import Badge from 'react-bootstrap/Badge';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import Accordion from 'react-bootstrap/Accordion';
 import Stack from 'react-bootstrap/Stack';
+import Image from 'react-bootstrap/Image';
 
 const techColors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark'];
 
-const ProjectCard = ({ image, title, description, demo, github, techarray, created, updated }) => {
+const ExperienceCard = ({ image, title, description, demo, github, techarray, created, updated }) => {
     const [isAccordionOpen, setIsAccordionOpen] = useState(false);
     const handleDemoClick = () => {
         window.open(demo, '_blank');
@@ -23,12 +24,14 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
     };
     return (
         <div>
-            <Card className="project-card"  style={{ width: '23rem', marginBottom: '3rem', height: isAccordionOpen ? 'auto' : '550px' }}>
+            <Card className="project-card" style={{ width: '23rem', marginBottom: '3rem', height: isAccordionOpen ? 'auto' : '550px' }}
+                border="primary">
                 <div className="screw top-left" />
                 <div className="screw top-right" />
                 <div className="screw bottom-left" />
                 <div className="screw bottom-right" />
-                <Card.Img variant="top" src={image} style={{ height: '250px' }} />
+                <Badge bg="dark" style={{ opacity: '0.8' }}><Card.Title style={{ fontSize: '18px' }}>{title}</Card.Title></Badge>
+                <Image variant="top" src={image} style={{ height: '250px' }} rounded  />
                 <Card.ImgOverlay style={{ height: '250px' }}>
                     <Badge bg="dark" style={{ opacity: '0.8' }}><Card.Title style={{ fontSize: '18px' }}>{title}</Card.Title></Badge>
                 </Card.ImgOverlay>
@@ -56,7 +59,7 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
                         <Button onClick={handleGithubClick} size="sm" variant="dark"><AiFillGithub style={{ color: 'white' }} /></Button>
                         <small style={{ fontSize: '9px', fontWeight: 'bold', color: 'white' }}>Created: {created}</small>
                         <div className="vr" />
-                        <small  style={{ fontSize: '9px', fontWeight: 'bold', color: 'white' }}>Updated: {updated}</small>
+                        <small style={{ fontSize: '9px', fontWeight: 'bold', color: 'white' }}>Updated: {updated}</small>
                     </Stack>
                 </Card.Footer>
 
@@ -64,7 +67,7 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
         </div>
     );
 };
-ProjectCard.propTypes = {
+ExperienceCard.propTypes = {
     image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -75,4 +78,4 @@ ProjectCard.propTypes = {
     created: PropTypes.string.isRequired,
 };
 
-export default ProjectCard;
+export default ExperienceCard;
