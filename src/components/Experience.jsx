@@ -5,9 +5,9 @@ import Stack from 'react-bootstrap/Stack';
 const Experience = () => {
   return (
     <div className="experience-container">
-      <div className="section-title py-5 d-flex justify-content-center align-items-center">
-        <h2>Experience</h2>
-      </div>
+        <div className="section-title">
+          <h2>Experience</h2>
+        </div>
       <Container fluid className="py-5 d-flex justify-content-center align-items-center">
         <div className="main-timeline">
           <ul className="timeline-with-icons">

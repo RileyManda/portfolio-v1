@@ -268,19 +268,19 @@
   border-radius: 50%;
 }
 
-/* @keyframes floatArrow {
+@keyframes floatArrow {
   0% {
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-50px);
+    transform: translateY(-10px);
   }
 
   100% {
     transform: translateY(0);
   }
-} */
+}
 
 /* Social media icons */
 .social-media-buttons {
