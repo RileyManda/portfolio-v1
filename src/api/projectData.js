@@ -1,7 +1,7 @@
 import jetlogixImage from '../assets/project-images/jetlogix.png'
-import PortfolioImage from '../assets/project-images/portfolio.png'
-import CoincraftImage from '../assets/project-images/coincraft-home.png'
-import CixhubImage from '../assets/project-images/cixhub.png'
+// import PortfolioImage from '../assets/project-images/portfolio.png'
+// import CoincraftImage from '../assets/project-images/coincraft-home.png'
+// import CixhubImage from '../assets/project-images/cixhub.png'
 import JetLogixSchema from '../assets/project-images/jetlogix-db-schema.png'
 import EventHarborImage from '../assets/project-images/eventharbor.webp'
 const projects = [
@@ -36,44 +36,6 @@ const projects = [
     "image": JetLogixSchema,
     "created_at": "2023-11-01T12:00:00Z",
     "updated_at": "2023-11-05T15:30:00Z"
-  },
-  {
-    "name": "Portfolio",
-    "description": "One distinctive feature of this portfolio is its seamless integration with the GitHub API.The portfolio has real-time updates for every project I add to my GitHub profile, providing insights into my latest projects, contributions, and coding activities.This innovative integration adds a layer of dynamism to the portfolio, creating an immersive experience for visitors eager to explore the depth and breadth of my coding endeavors directly from this digital showcase.",
-    "homepage": "https://rileysportfolio.onrender.com/",
-    "html_url": "https://github.com/RileyManda/rileysportfolio",
-    "topics": ["react","vite3","react-router","react-bootstrap","reactjs-components","githubapi","react-jest","prop-types","react-testing-library"],
-    "image": PortfolioImage,
-    "created_at": "2023-09-01T12:00:00Z",
-    "updated_at": "2023-09-05T15:30:00Z"
-  },
-  {
-    "name": "CoinCraft",
-    "description": "CoinCraft is a powerful and user-friendly Rails budgeting application designed to help you take control of your finances and achieve your financial goals. With CoinCraft, you can craft your financial future with ease, precision, and confidence.",
-    "homepage": "https://coincraft.onrender.com/",
-    "html_url": "https://github.com/RileyManda/coincraft",
-    "topics": [
-      "ruby on rails",
-      "pry",
-      "rspec",
-      "devise",
-      "render",
-      "capybara",
-      "cancancan"
-    ],
-    "image": CoincraftImage,
-    "created_at": "2023-10-01T10:30:00Z",
-    "updated_at": "2023-10-10T18:45:00Z"
-  },
-    {
-    "name": "CixHub Website",
-    "description": "Cixhub's official website, built with react and nextjs with themeui and styled components.",
-    "homepage": "https://cixhub.netlify.app/",
-    "html_url": "https://github.com/RileyManda/cixhub",
-      "topics": ["reactjs","styled-components","theme - ui","nextjs13"],
-    "image": CixhubImage,
-    "created_at": "2022-12-01T12:00:00Z",
-    "updated_at": "2022-12-05T15:30:00Z"
   },
   {
     "name": "EventHarbor",
