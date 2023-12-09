@@ -30,9 +30,12 @@ const Banner = () => {
             <div key={index} className="banner-item">
               <Row className="align-items-center text-center">
                 <Col sm={12} lg={6} className="carousel-item-content d-flex justify-content-center">
-                  <Stack gap={3} direction="vertical" className='stack-layout'>
-                    <h1 className="greeting">{project.title}</h1>
-                    <p className="intro">{project.description}</p>
+                  <Stack gap={3} direction="vertical" className='intro-container'>
+                    <h1 className="greeting">{project.greeting}</h1>
+                    <h1 className="iam">{project.iam}</h1>
+                    <h1 className="name">{project.name}</h1>
+                    <p className="intro">{project.introduction}</p>
+                    <p className="intro2">{project.introduction2}</p>
                   </Stack>
                 </Col>
                 <Col sm={12} lg={6} className="carousel-item-content d-flex justify-content-center">
