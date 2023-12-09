@@ -23,8 +23,8 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
     };
     return (
         <div>
-            <Card className="project-card" style={{ width: '23rem', marginBottom: '3rem', height: isAccordionOpen ? 'auto' : '550px' }}
-                border="dark">
+            <Card className="project-card"  style={{ width: '23rem', marginBottom: '3rem', height: isAccordionOpen ? 'auto' : '550px' }}
+                border="primary">
                 <div className="screw top-left" />
                 <div className="screw top-right" />
                 <div className="screw bottom-left" />
