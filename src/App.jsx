@@ -3,8 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 
 function App() {
@@ -26,11 +26,9 @@ function App() {
           <div ref={projectsRef}>
             <Projects setSearchKeyword={setSearchKeyword} searchKeyword={searchKeyword} />
           </div>
-
           <div ref={experienceRef}>
-          <Timeline />
+            <Experience setSearchKeyword={setSearchKeyword} searchKeyword={searchKeyword} />
           </div>
-
           <div ref={contactRef}>
             <Contact />
           </div>
