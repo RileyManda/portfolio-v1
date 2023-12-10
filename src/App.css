@@ -180,6 +180,7 @@
   align-content: center;
   text-align: center;
   margin-bottom: 12px;
+  font-family: var(--overpass-font-family);
 }
 
 /* projects */
@@ -190,20 +191,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 55px;
 }
 
 .project-card {
-  background: linear-gradient(135deg, #3f51b5, #363c48);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 1px;
   border-color: var(--border-color);
   color: var(--white-font-color);
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-title {
+  font-family: var(--overpass-font-family);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+}
+
+.card-description {
+  color: #090808;
+  font-family: var(--overpass-font-family);
+}
+
+.tech-icon {
+  font-size: 40px;
+  color: var(--brand);
 }
 
 /* timeline */
@@ -356,4 +371,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.footer-text {
+  color: #000;
+  font-family: var(--overpass-font-family);
 }
