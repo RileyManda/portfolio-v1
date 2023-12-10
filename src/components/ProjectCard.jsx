@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
-import { FaReact, FaNodeJs, FaBootstrap } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaBootstrap, FaEye } from "react-icons/fa";
 import Stack from 'react-bootstrap/Stack';
-import { AiOutlineLink, AiFillGithub } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 import { SiRedux, SiStyledcomponents, SiTestinglibrary, SiTailwindcss } from "react-icons/si";
 import { DiRuby } from "react-icons/di";
 import { BiLogoPostgresql } from "react-icons/bi";
+
 
 
 
@@ -67,7 +68,7 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
                 <Card.Footer className="card-footer">
                     <Stack direction="horizontal" gap={3} className="footer-stack">
                         <Button onClick={handleDemoClick} size="sm" variant="dark">
-                            <AiOutlineLink style={{ marginRight: '5px' }} />
+                            <FaEye style={{ marginRight: '5px' }} />
 
                         </Button>
                         <Button onClick={handleGithubClick} size="sm" variant="dark">
