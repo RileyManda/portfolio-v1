@@ -22,7 +22,8 @@
 
   /* New metallic and robotic-themed variables */
   --metallic-bg-gradient: linear-gradient(135deg, #363c48, #212734);
-  --robotic-font-family: 'Roboto', sans-serif;
+  --overpass-font-family: 'Overpass', sans-serif;
+  --rubik-font-family: 'Rubik Mono One', sans-serif;
   --banner-gradient: linear-gradient(90deg, rgb(2, 0, 36) 30%, rgba(54, 60, 72, 0.6545211834733893) 50%, #2e3a51 100%);
 }
 
@@ -34,21 +35,20 @@
 }
 
 .custom-navbar {
+  display: flex;
   background: var(--white-font-color);
-  font-family: var(--robotic-font-family);
-  margin-left: 60px;
+  font-family: var(--overpass-font-family);
 }
 
-.custom-navbar .navbar-nav .nav-link {
-  color: var(--secondary-color) !important;
+.custom-navbar .navbar-nav .nav-link.active,
+.custom-navbar .navbar-nav .nav-link:active,
+.custom-navbar .navbar-nav .nav-link:focus {
+  color: var(--brand) !important;
 }
 
+.custom-navbar .navbar-nav .nav-link.active:hover,
 .custom-navbar .navbar-nav .nav-link:hover {
-  color: var(--nav-link-active) !important;
-}
-
-.custom-navbar .navbar-nav .nav-link:active {
-  color: var(--nav-link-active) !important;
+  color: var(--brand) !important;
 }
 
 .brand {
@@ -60,7 +60,6 @@
 }
 
 /* header intro */
-
 .greeting {
   color: var(--brand);
   margin-right: 80px;
@@ -74,7 +73,7 @@
   color: #090808;
   margin-right: 190px;
   font-size: 60px;
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: var(--rubik-font-family);
 }
 
 .name {
@@ -82,7 +81,7 @@
   margin-right: 140px;
   margin-top: -30px;
   font-size: 60px;
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: var(--rubik-font-family);
 }
 
 .intro {
@@ -91,7 +90,7 @@
   margin-left: 90px;
   margin-bottom: -15px;
   margin-top: -10px;
-  font-family: 'Overpass', sans-serif;
+  font-family: var(--overpass-font-family);
 }
 
 .intro2 {
@@ -100,7 +99,7 @@
   margin-left: 90px;
   margin-bottom: 10px;
   margin-top: -10px;
-  font-family: 'Overpass', sans-serif;
+  font-family: var(--overpass-font-family);
 }
 
 .whatimadoing {
@@ -109,7 +108,7 @@
   margin-left: 90px;
   margin-bottom: 10px;
   margin-top: -10px;
-  font-family: 'Overpass', sans-serif;
+  font-family: var(--overpass-font-family);
 }
 
 .whatimdoing {
@@ -165,7 +164,7 @@
 
 .stack-layout p {
   font-size: 30px;
-  font-family: 'Overpass', sans-serif;
+  font-family: var(--overpass-font-family);
 }
 
 /* header intro */
