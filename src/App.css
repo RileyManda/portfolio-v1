@@ -200,6 +200,7 @@
   border-color: var(--border-color);
   color: var(--white-font-color);
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
 .card-title {
