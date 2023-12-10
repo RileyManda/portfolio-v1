@@ -5,7 +5,9 @@ import Badge from 'react-bootstrap/Badge';
 import { FaReact, FaNodeJs, FaBootstrap } from "react-icons/fa";
 import Stack from 'react-bootstrap/Stack';
 import { AiOutlineLink, AiFillGithub } from 'react-icons/ai';
-import { SiRedux, SiStyledcomponents } from "react-icons/si";
+import { SiRedux, SiStyledcomponents, SiTestinglibrary, SiTailwindcss } from "react-icons/si";
+import { DiRuby } from "react-icons/di";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 
 
@@ -13,19 +15,19 @@ import { SiRedux, SiStyledcomponents } from "react-icons/si";
 
 const techIconMap = {
     react: <FaReact />,
-    'react-testing-library': <FaReact />,
+    postgresql: <BiLogoPostgresql />,
+    'react-testing-library': <SiTestinglibrary />,
     bootstrap: <FaBootstrap />,
     'redux-toolkit': <SiRedux />,
-    'react-styled-component': <SiStyledcomponents />,
-    'Redux-toolkit': <FaReact />,
-    'ruby on rails': <FaReact />,
+    'styled-components': <SiStyledcomponents />,
+    'Redux-toolkit': <FaBootstrap />,
+    'ruby on rails': <DiRuby />,
     'api authentication': <FaReact />,
-    devise: <FaReact />,
-    rails: <FaReact />,
-    cancancan: <FaReact />,
+    rails: <DiRuby />,
     ruby: <FaReact />,
-    'tailwind - css': <FaNodeJs />,
-    'themeui': <SiRedux />,
+    nodejs: <FaNodeJs />,
+    nextjs: <FaNodeJs />,
+    'tailwind - css': <SiTailwindcss />,
 
 };
 
@@ -66,11 +68,10 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
                     <Stack direction="horizontal" gap={3} className="footer-stack">
                         <Button onClick={handleDemoClick} size="sm" variant="dark">
                             <AiOutlineLink style={{ marginRight: '5px' }} />
-                            Demo
+
                         </Button>
                         <Button onClick={handleGithubClick} size="sm" variant="dark">
                             <AiFillGithub style={{ marginRight: '5px' }} />
-                            GitHub
                         </Button>
                         <small className="footer-text">Created: {created}</small>
                         <div className="vr" />

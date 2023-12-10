@@ -16,7 +16,7 @@ const projects = [
       "react-testing-library",
       "bootstrap",
       "redux-toolkit",
-      "react-styled-component",
+      "styled-components",
       "Redux-toolkit"
     ],
     "image": jetlogixImage,
@@ -46,9 +46,9 @@ const projects = [
     "topics": [
       "react",
       "react-testing-library",
-      "themeui",
+      "nextjs",
       "redux-toolkit",
-      "react-styled-component",
+      "styled-components",
     ],
     "image": CixhubImage,
     "created_at": "2022-12-01T12:00:00Z",
