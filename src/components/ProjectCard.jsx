@@ -50,7 +50,7 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
                 <Card.Img variant="top" src={image} style={{ height: '250px', objectFit: 'cover' }} />
                 <Card.ImgOverlay style={{ height: '250px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
                     <Badge bg="dark" style={{ opacity: '0.8' }}>
-                        <Card.Title style={{ fontSize: '18px', color: 'white' }}>{title}</Card.Title>
+                        <Card.Title className="card-title" style={{ fontSize: '18px', color: 'white' }}>{title}</Card.Title>
                     </Badge>
                 </Card.ImgOverlay>
                 <Card.Body>
