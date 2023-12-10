@@ -190,11 +190,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 80px;
 }
 
 .project-card {
-  background: linear-gradient(135deg, #3f51b5, #363c48);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   border-radius: 1px;
   border-color: var(--border-color);
@@ -204,6 +203,10 @@
 
 .project-card:hover {
   transform: translateY(-5px);
+}
+
+.card-description {
+  color: #090808;
 }
 
 /* timeline */
