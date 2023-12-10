@@ -1,7 +1,7 @@
 import Footer from './Footer';
 const Contact = () => {
     return (
-        <div className="contact-container">
+        <div className="footer-container">
             <Footer />
         </div>
     );
