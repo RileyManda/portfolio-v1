@@ -36,6 +36,7 @@ const Banner = () => {
                     <h1 className="name">{project.name}</h1>
                     <p className="intro">{project.introduction}</p>
                     <p className="intro2">{project.introduction2}</p>
+                    <p className="whatimadoing">{project.whatimadoing}</p>
                   </Stack>
                 </Col>
                 <Col sm={12} lg={6} className="carousel-item-content d-flex justify-content-center">

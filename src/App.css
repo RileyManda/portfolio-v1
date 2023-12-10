@@ -64,7 +64,7 @@
 .greeting {
   color: var(--brand);
   margin-right: 80px;
-  margin-top: -60px;
+  margin-top: -50px;
   font-size: 60px;
   font-family: 'Rubik Mono One', sans-serif;
 }
@@ -88,17 +88,28 @@
 .intro {
   color: #090808;
   font-size: 30px;
-  margin-left: 50px;
-  margin-bottom: 10px;
+  margin-left: 90px;
+  margin-bottom: -15px;
   margin-top: -10px;
+  font-family: 'Overpass', sans-serif;
 }
 
 .intro2 {
   color: #090808;
   font-size: 30px;
-  margin-left: 95px;
+  margin-left: 90px;
   margin-bottom: 10px;
   margin-top: -10px;
+  font-family: 'Overpass', sans-serif;
+}
+
+.whatimadoing {
+  color: var(--brand);
+  font-size: 20px;
+  margin-left: 90px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  font-family: 'Overpass', sans-serif;
 }
 
 .whatimdoing {
