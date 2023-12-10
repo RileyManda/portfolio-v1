@@ -18,7 +18,7 @@ const Header = ({ homeRef, projectsRef, experienceRef, contactRef }) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="" style={{ maxHeight: '100px' }} navbarScroll >
+          <Nav className="nav-link" style={{ maxHeight: '100px' }} navbarScroll >
             <Nav.Link  onClick={() => scrollToRef(homeRef)} >Home</Nav.Link>
             <Nav.Link onClick={() => scrollToRef(projectsRef)}>Projects</Nav.Link>
             <Nav.Link onClick={() => scrollToRef(experienceRef)}>Experience</Nav.Link>
