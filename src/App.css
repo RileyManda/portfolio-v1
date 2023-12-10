@@ -190,7 +190,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 80px;
+  margin-left: 55px;
 }
 
 .project-card {
@@ -207,6 +207,11 @@
 
 .card-description {
   color: #090808;
+}
+
+.tech-icon {
+  font-size: 40px;
+  color: var(--brand);
 }
 
 /* timeline */

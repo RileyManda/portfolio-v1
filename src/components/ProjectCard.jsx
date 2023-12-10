@@ -1,16 +1,35 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import Accordion from 'react-bootstrap/Accordion';
+import { FaReact, FaNodeJs, FaBootstrap } from "react-icons/fa";
 import Stack from 'react-bootstrap/Stack';
+import { AiOutlineLink, AiFillGithub } from 'react-icons/ai';
+import { SiRedux, SiStyledcomponents } from "react-icons/si";
 
-const techColors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark'];
+
+
+// const techColors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark'];
+
+const techIconMap = {
+    react: <FaReact />,
+    'react-testing-library': <FaReact />,
+    bootstrap: <FaBootstrap />,
+    'redux-toolkit': <SiRedux />,
+    'react-styled-component': <SiStyledcomponents />,
+    'Redux-toolkit': <FaReact />,
+    'ruby on rails': <FaReact />,
+    'api authentication': <FaReact />,
+    devise: <FaReact />,
+    rails: <FaReact />,
+    cancancan: <FaReact />,
+    ruby: <FaReact />,
+    'tailwind - css': <FaNodeJs />,
+    'themeui': <SiRedux />,
+
+};
 
 const ProjectCard = ({ image, title, description, demo, github, techarray, created, updated }) => {
-    const [isAccordionOpen, setIsAccordionOpen] = useState(false);
     const handleDemoClick = () => {
         window.open(demo, '_blank');
     };
@@ -18,52 +37,51 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
     const handleGithubClick = () => {
         window.open(github, '_blank');
     };
-    const toggleAccordion = () => {
-        setIsAccordionOpen(!isAccordionOpen);
-    };
+
     return (
         <div>
-            <Card className="project-card"  style={{ width: '23rem', marginBottom: '3rem', height: isAccordionOpen ? 'auto' : '550px' }}>
+            <Card className="project-card" style={{ width: '23rem', marginBottom: '3rem', height: '550px' }}>
                 <div className="screw top-left" />
                 <div className="screw top-right" />
                 <div className="screw bottom-left" />
                 <div className="screw bottom-right" />
-                <Card.Img variant="top" src={image} style={{ height: '250px' }} />
-                <Card.ImgOverlay style={{ height: '250px' }}>
-                    <Badge bg="dark" style={{ opacity: '0.8' }}><Card.Title style={{ fontSize: '18px' }}>{title}</Card.Title></Badge>
+                <Card.Img variant="top" src={image} style={{ height: '250px', objectFit: 'cover' }} />
+                <Card.ImgOverlay style={{ height: '250px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+                    <Badge bg="dark" style={{ opacity: '0.8' }}>
+                        <Card.Title style={{ fontSize: '18px', color: 'white' }}>{title}</Card.Title>
+                    </Badge>
                 </Card.ImgOverlay>
                 <Card.Body>
-                    <Accordion style={{ width: '100%', fontSize: '14px' }}>
-                        <Accordion.Item eventKey="0">
-                            <Accordion.Header onClick={toggleAccordion}>About</Accordion.Header>
-                            <Accordion.Body>
-                                <Card.Text>{description}</Card.Text>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
-                    <div className="badge-container">
+                    <Card.Text className="card-description">{description}</Card.Text>
+                    <div className="tech-icon">
                         {techarray.map((tech, index) => (
-                            <Badge pill key={index} bg={techColors[index % techColors.length]} style={{ fontSize: '12px' }} >
-                                {tech}
-                            </Badge>
+                            <span key={index} className="tech-icon" style={{ marginRight: '5px', marginBottom: '5px' }}>
+                                {techIconMap[tech]}
+                            </span>
                         ))}
                     </div>
 
                 </Card.Body>
-                <Card.Footer bg="dark">
-                    <Stack direction="horizontal" gap={3}>
-                        <Button onClick={handleDemoClick} size="sm" variant="dark"><AiFillEye style={{ color: 'white' }} /></Button>
-                        <Button onClick={handleGithubClick} size="sm" variant="dark"><AiFillGithub style={{ color: 'white' }} /></Button>
-                        <small style={{ fontSize: '9px', fontWeight: 'bold', color: 'white' }}>Created: {created}</small>
+                <Card.Footer className="card-footer">
+                    <Stack direction="horizontal" gap={3} className="footer-stack">
+                        <Button onClick={handleDemoClick} size="sm" variant="dark">
+                            <AiOutlineLink style={{ marginRight: '5px' }} />
+                            Demo
+                        </Button>
+                        <Button onClick={handleGithubClick} size="sm" variant="dark">
+                            <AiFillGithub style={{ marginRight: '5px' }} />
+                            GitHub
+                        </Button>
+                        <small className="footer-text">Created: {created}</small>
                         <div className="vr" />
-                        <small  style={{ fontSize: '9px', fontWeight: 'bold', color: 'white' }}>Updated: {updated}</small>
+                        <small className="footer-text">Updated: {updated}</small>
                     </Stack>
                 </Card.Footer>
-
             </Card>
         </div>
     );
 };
+
 ProjectCard.propTypes = {
     image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

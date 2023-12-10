@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
+// import Projects from './components/Projects';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import 'bootstrap/dist/css/bootstrap.min.css';
