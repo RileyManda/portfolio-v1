@@ -17,7 +17,7 @@ const Header = ({ homeRef, projectsRef, experienceRef, contactRef }) => {
           RileyManda
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" className="justify-content-center">
           <Nav className="nav-link" style={{ maxHeight: '100px' }} navbarScroll >
             <Nav.Link  onClick={() => scrollToRef(homeRef)} >Home</Nav.Link>
             <Nav.Link onClick={() => scrollToRef(projectsRef)}>Projects</Nav.Link>
