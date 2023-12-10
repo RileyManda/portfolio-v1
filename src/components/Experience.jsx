@@ -19,7 +19,7 @@ const Experience = () => {
               >
                 <Stack direction="vertical" gap={3} className="timeline-icon">
                   {experience.icons.map((icon, i) => (
-                    <div key={i} style={{ color: experience.iconColor[i] }}>
+                    <div className="experience-icons" key={i} style={{ color: experience.iconColor[i] }}>
                       {icon}
                     </div>
                   ))}

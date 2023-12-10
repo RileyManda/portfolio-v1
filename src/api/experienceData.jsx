@@ -69,7 +69,7 @@ const experienceData = [
         position: "Senior Mobile & Web Application Developer",
         company: "Namibia Media Holdings",
         date: "Nov 2014 - June 2017",
-        description: "Developed and Contributed to team development efforts, resulting in the successful delivery of the MyInfo project.  MyInfo project.",
+        description: "Developed and Contributed to team development efforts, resulting in the successful delivery of the MyInfo project.",
         icons: [<AiFillAndroid key="1" />, <FaSwift key="2" />, <DiMysql key="3" />],
         iconColor: ['#0099cc', '#D44848', '#ff8800']
     },

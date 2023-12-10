@@ -389,3 +389,7 @@
   color: #000;
   font-family: var(--overpass-font-family);
 }
+
+.experience-icons {
+  font-size: 30px;
+}
