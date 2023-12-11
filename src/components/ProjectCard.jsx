@@ -8,6 +8,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { SiRedux, SiStyledcomponents, SiTestinglibrary, SiTailwindcss } from "react-icons/si";
 import { DiRuby } from "react-icons/di";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { FaGithub } from "react-icons/fa6";
 
 
 
@@ -29,6 +30,8 @@ const techIconMap = {
     nodejs: <FaNodeJs />,
     nextjs: <FaNodeJs />,
     'tailwind - css': <SiTailwindcss />,
+    'github': <FaGithub />
+
 
 };
 
@@ -43,7 +46,7 @@ const ProjectCard = ({ image, title, description, demo, github, techarray, creat
 
     return (
         <div>
-            <Card className="project-card" style={{ width: '23rem', marginBottom: '3rem', height: '550px' }}>
+            <Card className="project-card" style={{ width: '26rem', marginBottom: '3rem', height: '550px' }}>
                 <div className="screw top-left" />
                 <div className="screw top-right" />
                 <div className="screw bottom-left" />
