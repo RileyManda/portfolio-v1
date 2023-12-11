@@ -25,7 +25,7 @@ const projects = [
   },
   {
     "name": "JetLogix-API",
-    "description": "Contributed to the successful development of JetLogix's API.A secure Ruby on Rails API,that utilizes PostgreSQL database, manages private jet reservations.",
+    "description": "Contributed to the successful development of JetLogix's API.A secure Ruby on Rails API,that utilizes PostgreSQL database, manages private jet reservations.The APi end-points are exposed and cosnumed by the Jetlogix React Front end",
     "homepage": "https://jetlogix.onrender.com/",
     "html_url": "https://github.com/rubydevi/jetlogix-frontend",
     "topics": [
@@ -40,7 +40,7 @@ const projects = [
   },
   {
     "name": "CixHub",
-    "description": "Cixhub's official website MVP",
+    "description": "Developed Cixhub's official website MVP,A dynamic website built with react,themui,boostrap and nextjs.All the UI assets,logos and images where specifically crafted for the websites theme using photoshop and Adobexd",
     "homepage": "https://cixhub.netlify.app/",
     "html_url": "https://github.com/RileyManda/cixhub",
     "topics": [
