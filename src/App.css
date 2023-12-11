@@ -407,3 +407,28 @@
 .experience-icons {
   font-size: 30px;
 }
+
+.contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.fab-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 16px;
+  background-color: var(--social-icons-color);
+  opacity: 0.9;
+}
+
+.fab-button:hover {
+  background-color: var(--brand);
+}
