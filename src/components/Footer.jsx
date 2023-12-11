@@ -1,6 +1,6 @@
 import { FaTwitter, FaGithub, FaStackOverflow, FaLinkedin, FaMedium } from 'react-icons/fa';
 import Stack from 'react-bootstrap/Stack';
-
+import { MdEmail } from "react-icons/md";
 const Footer =()=> {
   return (
       <div>  <footer className="footer">
@@ -29,6 +29,11 @@ const Footer =()=> {
               <div className="p-2">
                   <a href="https://twitter.com/rileycodez" target="_blank" rel="noopener noreferrer">
                       <FaTwitter style={{ color: 'white' }} />
+                  </a>
+              </div>
+              <div className="p-2">
+                  <a href="mailto:rileymanda0@email.com" target="_blank" rel="noopener noreferrer">
+                      <MdEmail style={{ color: 'white' }} />
                   </a>
               </div>
 
