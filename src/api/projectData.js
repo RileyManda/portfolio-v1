@@ -56,7 +56,7 @@ const projects = [
   },
     {
   "name": "GithubPortfolio",
-    "description": "Developed a project portfolio that renders data from the github API to display a list of projects and their tect stacks",
+      "description": "Developed a github portfolio project, meticulously crafted to access the github APi and display a list of projects and their tech-stacks.",
     "homepage": "https://rileysportfolio.onrender.com/",
       "html_url": "https://github.com/RileyManda/githubportfolio",
     "topics": [

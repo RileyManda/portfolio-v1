@@ -61,9 +61,9 @@ const Projects = () => {
 
         <Stack gap={3}>
           {isLoading && <Loader />}
-          <Row xs="auto" md="auto" className="justify-content-center">
+          <Row xs="2" md="2" className="justify-content-center">
             {projectsWithTopics.map((project, index) => (
-              <Col key={index} xs="auto">
+              <Col key={index} xs="4" md="5">
                 <ProjectCard
                   image={project.image}
                   created={formatDate(project.created_at)}
