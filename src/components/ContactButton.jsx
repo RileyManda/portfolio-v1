@@ -7,7 +7,7 @@ const ContactButton = () => {
     };
     return (
         <div className="contact-button">
-            <Button variant="primary" className="fab-button" onClick={handleClick}>
+            <Button className="fab-button" onClick={handleClick}>
                 <MdEmail style={{ width: '50px', height: '50px' }} />
             </Button>
         </div>

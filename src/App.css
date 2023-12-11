@@ -429,6 +429,33 @@
   opacity: 0.9;
 }
 
-.fab-button:hover {
+.contact-button :hover {
   background-color: var(--brand);
+}
+
+.send-button {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--brand);
+  opacity: 0.9;
+}
+
+.send-button :hover {
+  background-color: var(--brand);
+}
+
+/* header intro */
+.letcconnect {
+  color: var(--brand);
+  margin-right: 80px;
+  margin-top: -20px;
+  font-size: 50px;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.connect-prompt {
+  color: var(--metallic-bg-gradient);
+  margin-right: 80px;
+  margin-top: 50px;
+  font-size: 20px;
+  font-family: var(--overpass-font-family);
 }
