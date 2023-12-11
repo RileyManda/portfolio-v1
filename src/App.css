@@ -437,6 +437,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: var(--brand);
   opacity: 0.9;
+  font-family: var(--overpass-font-family);
+  color: white;
 }
 
 .send-button :hover {
