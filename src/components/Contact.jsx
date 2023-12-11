@@ -1,9 +1,14 @@
+import ContactButton from './ContactButton';
 import Footer from './Footer';
 const Contact = () => {
     return (
-        <div className="footer-container">
-            <Footer />
+        <div>
+        <ContactButton />
+            <div className="footer-container">
+                <Footer />
+            </div>
         </div>
+
     );
 };
 
