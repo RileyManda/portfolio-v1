@@ -4,8 +4,9 @@ import Stack from 'react-bootstrap/Stack';
 
 const Experience = () => {
   return (
-    <div className="experience-container">
+    <div>
       <Container fluid className="py-5 d-flex justify-content-center align-items-center">
+        <Stack direction="vertical" className="experience-container">
         <div className="experience-title">
           <h2>Experience</h2>
         </div>
@@ -34,7 +35,9 @@ const Experience = () => {
             ))}
           </ul>
         </div>
+        </Stack>
       </Container>
+
     </div>
   );
 };
