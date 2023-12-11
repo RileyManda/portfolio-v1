@@ -10,7 +10,6 @@ import { format } from 'date-fns';
 import ProjectData from '../api/projectData';
 
 const Projects = () => {
-  // projects local state
   const [isLoading, setIsLoading] = useState(false);
   const [projects] = useState(ProjectData);
 
@@ -43,9 +42,9 @@ const Projects = () => {
         </div>
         <Stack gap={3}>
           {isLoading && <Loader />}
-          <Row xs="2" md="2" className="justify-content-center">
+          <Row xs="auto" md="auto" className="justify-content-center">
             {projectsWithTopics.map((project, index) => (
-              <Col key={index} xs="3" md="5">
+              <Col key={index} xs="auto" md="5">
                 <ProjectCard
                   image={project.image}
                   created={formatDate(project.created_at)}
