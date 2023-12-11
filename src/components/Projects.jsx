@@ -45,22 +45,8 @@ const Projects = () => {
         <div className="section-title">
           <h2>Projects</h2>
         </div>
-
-        <Navbar expand="lg" sticky="top" variant="dark" className="search-bar">
-          <Nav>
-            <NavDropdown title="Filter by:" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#react">React</NavDropdown.Item>
-              <NavDropdown.Item href="#redux">Redux-toolkit</NavDropdown.Item>
-              <NavDropdown.Item href="#js">Javascript</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#fs">Full-stack</NavDropdown.Item>
-              <NavDropdown.Item href="#rr">Ruby|Rails</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar>
-
         <Stack gap={3}>
-          {isLoading && <Loader />}
+
           <Row xs="2" md="2" className="justify-content-center">
             {projectsWithTopics.map((project, index) => (
               <Col key={index} xs="4" md="5">
