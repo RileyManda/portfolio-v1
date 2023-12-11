@@ -7,10 +7,6 @@ import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 import Loader from './Loader';
 import { format } from 'date-fns';
-// import SearchField from './SearchField';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Navbar from 'react-bootstrap/Navbar';
 import ProjectData from '../api/projectData';
 
 const Projects = () => {
@@ -46,10 +42,10 @@ const Projects = () => {
           <h2>Projects</h2>
         </div>
         <Stack gap={3}>
-
+          {isLoading && <Loader />}
           <Row xs="2" md="2" className="justify-content-center">
             {projectsWithTopics.map((project, index) => (
-              <Col key={index} xs="4" md="5">
+              <Col key={index} xs="3" md="5">
                 <ProjectCard
                   image={project.image}
                   created={formatDate(project.created_at)}
