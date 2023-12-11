@@ -13,11 +13,11 @@ const projects = [
     "html_url": "https://github.com/rubydevi/jetlogix-frontend",
     "topics": [
       "react",
-      "react-testing-library",
       "bootstrap",
       "redux-toolkit",
       "styled-components",
-      "Redux-toolkit"
+      "Redux-toolkit",
+       "react-testing-library"
     ],
     "image": jetlogixImage,
     "created_at": "2023-11-01T12:00:00Z",
@@ -65,6 +65,7 @@ const projects = [
       "nextjs",
       "redux-toolkit",
       "styled-components",
+      "github"
     ],
     "image": PortfolioImage,
     "created_at": "2022-12-01T12:00:00Z",

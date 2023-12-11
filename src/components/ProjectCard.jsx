@@ -8,6 +8,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { SiRedux, SiStyledcomponents, SiTestinglibrary, SiTailwindcss } from "react-icons/si";
 import { DiRuby } from "react-icons/di";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { FaGithub } from "react-icons/fa6";
 
 
 
@@ -29,6 +30,8 @@ const techIconMap = {
     nodejs: <FaNodeJs />,
     nextjs: <FaNodeJs />,
     'tailwind - css': <SiTailwindcss />,
+    'github': <FaGithub />
+
 
 };
 
