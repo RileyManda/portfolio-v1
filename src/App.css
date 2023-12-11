@@ -222,6 +222,7 @@
 }
 
 /* timeline */
+
 .timeline-container {
   margin: 6px 0;
 }
@@ -344,9 +345,13 @@
 }
 
 /* timeline  */
+
+.main-timeline {
+  position: relative;
+}
+
 .timeline-with-icons {
   border-left: 1px solid hsl(0, 0%, 90%);
-  position: relative;
   list-style: none;
 }
 
@@ -373,7 +378,18 @@
   justify-content: center;
 }
 
+.timeline-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .footer-text {
   color: #000;
   font-family: var(--overpass-font-family);
+}
+
+.experience-icons {
+  font-size: 30px;
 }

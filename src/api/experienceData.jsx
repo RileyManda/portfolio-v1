@@ -1,7 +1,11 @@
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { DiRuby } from "react-icons/di";
-import { SiMui } from "react-icons/si";
+import { FaReact, FaNodeJs, FaSwift } from "react-icons/fa";
+import { DiRuby, DiMysql } from "react-icons/di";
+import { SiFlutter } from "react-icons/si";
 import { BiLogoFlutter } from "react-icons/bi";
+import { AiFillAndroid } from "react-icons/ai";
+import { IoLogoFirebase } from "react-icons/io5";
+import { BsFiletypeXml } from "react-icons/bs";
+
 
 export const orangeIconStyles = {
     color: '#ff8800', // Material Design Orange
@@ -33,32 +37,41 @@ const experienceData = [
         company: "SELF-Employed, Remote, South Africa",
         date: "April 2023 - Current",
         description: "Invested 1500+ hours in skill enhancement, and completed 20+ diverse projects.",
+        icons: [<FaReact key="1" />, <FaNodeJs key="2" />, <DiRuby key="3" />,],
+        iconColor: ['#0099cc', '#D44848',  '#ff8800'],
+    },
+    {
+        position: "Flutter Developer",
+        company: "MOBILE-TECHNOLOGIES,remote,Dubai",
+        date: "Jan 2022 - Dec 2022",
+        description: "Maintained various Android components and XML forms rendered by the server for seamless integration to Android Devices contributing to streamlining customer experience with sim card registration and sim card service management.",
+        icons: [<BiLogoFlutter key="1" />, <DiMysql key="2" />, <BsFiletypeXml key="2" />],
+        iconColor: ['#0099cc', '#D44848', '#ff8800'],
+    },
+
+    {
+        position: "MUNSHIG, India,",
+        company: "Developer| Tech consultant| QA Engineer",
+        date: "June 2019 - Dec 2021",
+        description: "Developed and scaled the MunshiG database design and structure, reducing data redundancy and an increase in data queries from the Client Application increasing customer retention and downloads by 15% a day",
+        icons: [<SiFlutter key="1" />, <AiFillAndroid key="2" />, <IoLogoFirebase key="3" />],
+        iconColor: ['#0099cc', '#D44848', '#ff8800'],
+    },
+    {
+        position: "Founder, Remote, South Africa",
+        company: "CIXHUB",
+        date: "May 2018 - Part-time",
+        description: "Created a startup, which is still in its early stages of development, characterized by a collection of small-scale projects and a team united by shared dreams without the confines of a traditional structure, and driven solely by our collective passion to positively impact the medical, wellness, and educational spheres.",
         icons: [<FaReact key="1" />, <FaNodeJs key="2" />, <DiRuby key="3" />],
-        iconColor: ['#0099cc', '#D44848',  '#ff8800']
+        iconColor: ['#0099cc', '#D44848', '#ff8800'],
     },
     {
-        position: "SELF-Employed, Remote, South Africa",
-        company: "Co",
-        date: "April 2023 - Current",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ...",
-        icons: [<BiLogoFlutter key="1" />],
-        iconColor: ['#0099cc']
-    },
-    {
-        position: "SELF-Employed, Remote, South Africa",
-        company: "Co",
-        date: "11 March 2020",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ...",
-        icons: [<FaReact key="1" />, <FaNodeJs key="2" />, <SiMui key="3" />],
-        iconColor: "primary",
-    },
-    {
-        position: "SELF-Employed, Remote, South Africa",
-        company: "Co",
-        date: "11 March 2020",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ...",
-        icons: [<FaReact key="1" />, <FaNodeJs key="2" />, <DiRuby key="3" />],
-        iconColor: "primary",
+        position: "Senior Mobile & Web Application Developer",
+        company: "Namibia Media Holdings",
+        date: "Nov 2014 - June 2017",
+        description: "Developed and Contributed to team development efforts, resulting in the successful delivery of the MyInfo project.",
+        icons: [<AiFillAndroid key="1" />, <FaSwift key="2" />, <DiMysql key="3" />],
+        iconColor: ['#0099cc', '#D44848', '#ff8800']
     },
 ];
 
