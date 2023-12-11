@@ -68,8 +68,8 @@ const projects = [
       "github"
     ],
     "image": PortfolioImage,
-    "created_at": "2022-12-01T12:00:00Z",
-    "updated_at": "2023-12-05T15:30:00Z"
+    "created_at": "2023-09-01T12:00:00Z",
+    "updated_at": "2023-09-05T15:30:00Z"
   }
 
 ];
