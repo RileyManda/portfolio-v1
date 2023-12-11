@@ -1,5 +1,5 @@
 import jetlogixImage from '../assets/project-images/jetlogix.png'
-// import PortfolioImage from '../assets/project-images/portfolio.png'
+import PortfolioImage from '../assets/project-images/portfolio.png'
 // import CoincraftImage from '../assets/project-images/coincraft-home.png'
 import CixhubImage from '../assets/project-images/cixhub.png'
 import JetLogixSchema from '../assets/project-images/jetlogix-db-schema.png'
@@ -51,6 +51,22 @@ const projects = [
       "styled-components",
     ],
     "image": CixhubImage,
+    "created_at": "2022-12-01T12:00:00Z",
+    "updated_at": "2023-12-05T15:30:00Z"
+  },
+    {
+  "name": "GithubPortfolio",
+    "description": "Developed a project portfolio that renders data from the github API to display a list of projects and their tect stacks",
+    "homepage": "https://rileysportfolio.onrender.com/",
+      "html_url": "https://github.com/RileyManda/githubportfolio",
+    "topics": [
+      "react",
+      "react-testing-library",
+      "nextjs",
+      "redux-toolkit",
+      "styled-components",
+    ],
+    "image": PortfolioImage,
     "created_at": "2022-12-01T12:00:00Z",
     "updated_at": "2023-12-05T15:30:00Z"
   }
