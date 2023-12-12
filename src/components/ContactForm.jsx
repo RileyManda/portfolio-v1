@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 const ContactForm = () => {
     return (
-        <Form action="https://formsubmit.co/rileymanda0@gmail.com" method="POST" style={{ border: `1px solid var(--brand)`, borderRadius: '8px', padding: '20px', width: '100%' }}>
+        <Form action="https://formsubmit.co/rileymanda0@gmail.com" method="POST" target="_blank" style={{ border: `1px solid var(--brand)`, borderRadius: '8px', padding: '20px', width: '100%' }}>
             <Form.Group controlId="formName">
                 <Form.Control type="text" name="name" placeholder="Enter your name" required style={{ border: `1px solid var(--brand)`, borderRadius: '4px' }} />
             </Form.Group>
