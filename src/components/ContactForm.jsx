@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { IoIosSend } from "react-icons/io";
 
 const ContactForm = () => {
     const [formValues, setFormValues] = useState({
@@ -13,10 +15,23 @@ const ContactForm = () => {
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value });
     };
+    const handleRefreshClick = () => {
+        // refresh the page
+        setFormSubmitted(false);
+        window.location.reload();
+    };
     const ThankYouMessage = () => (
+        <div>
         <div style={{ backgroundColor: '#ffa000', color: 'white', padding: '10px', marginBottom: '10px' }}>
-            Thank you for your message! I will respond shortly.
+        Thank you for your message! I will respond shortly.
         </div>
+            <br />
+            <Button className="sendagain" onClick={handleRefreshClick}>
+                <IoIosSend style={{ marginRight: '8px' }} />
+                Send Riley Another Message
+            </Button>
+        </div>
+
     );
     const handleSubmit = (e) => {
         e.preventDefault();
