@@ -441,8 +441,28 @@
   color: white;
 }
 
-.send-button:hover {
-  background-color: var(--brand);
+.sendagain {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* .sendagain:hover {
+  background: #2c3e50;
+} */
+
+.sendagain:active {
+  background: #2c3e50;
+  top: 2px;
+}
+
+.sendagain::before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
 }
 
 /* header intro */
