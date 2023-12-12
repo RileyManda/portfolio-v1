@@ -8,19 +8,24 @@ const ContactForm = () => {
         email: '',
         message: '',
     });
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value });
     };
-
+    const ThankYouMessage = () => (
+        <div style={{ backgroundColor: '#ffa000', color: 'white', padding: '10px', marginBottom: '10px' }}>
+            Thank you for your message! I will respond shortly.
+        </div>
+    );
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = document.createElement('form');
-        form.action = 'https://formsubmit.co/rileymanda0@gmail.com'; 
+        form.action = 'https://formsubmit.co/rileymanda0@gmail.com';
         form.method = 'POST';
         form.target = '_blank';
 
-        // Attach form data
+        // form data
         Object.entries(formValues).forEach(([name, value]) => {
             const input = document.createElement('input');
             input.type = 'hidden';
@@ -32,16 +37,22 @@ const ContactForm = () => {
         document.body.appendChild(form);
         form.submit();
 
-        // Clear the form after submission
+        // Clear the form
         setFormValues({
             name: '',
             _subject: '',
             email: '',
             message: '',
         });
+        setFormSubmitted(true);
     };
 
+
     return (
+        <div>
+            {formSubmitted ? (
+                <ThankYouMessage />
+            ) : (
         <Form
             onSubmit={handleSubmit}
             style={{ border: `1px solid var(--brand)`, borderRadius: '8px', padding: '20px', width: '100%' }}
@@ -95,6 +106,8 @@ const ContactForm = () => {
                 Send
             </button>
         </Form>
+            )}
+        </div>
     );
 };
 
