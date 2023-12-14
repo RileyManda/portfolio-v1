@@ -27,7 +27,7 @@ const projects = [
     "name": "JetLogix-API",
     "description": "Contributed to the successful development of JetLogix's API.A secure Ruby on Rails API,that utilizes PostgreSQL database, manages private jet reservations,with API endpoint ready for the Jetlogix Front-End",
     "homepage": "https://jetlogix.onrender.com/",
-    "html_url": "https://github.com/rubydevi/jetlogix-frontend",
+    "html_url": "https://github.com/rubydevi/jetlogix-backend",
     "topics": [
       "ruby on rails",
        "api authentication",
